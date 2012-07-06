@@ -34,6 +34,9 @@ exports.datastoreSettings = test_case(
             test.equal(ccr_settings.datastore.port  , 951753);
 
             test.done();
+
+            process.env['datastore:hostname'] = null;
+            process.env['datastore:port'] = null;
         }
     }
 );
@@ -48,6 +51,48 @@ exports.restSettings = test_case(
             test.equal(ccr_settings.rest.port, 654321);
 
             test.done();
+        },
+
+        settingsFromEnvironment : function(test) {
+            test.expect(1);
+
+            process.env['rest:port'] = 654951;
+
+            var ccr_settings = new ccr_settings_module.Settings('./assets/test_settings.json');
+
+            test.equal(ccr_settings.rest.port, 654951);
+
+            test.done();
+
+            process.env['rest:port'] = null;
+        }
+    }
+);
+
+exports.loggingSettings = test_case(
+    {
+        settingsFromFile : function(test) {
+            test.expect(1);
+
+            var ccr_settings = new ccr_settings_module.Settings('./assets/test_settings.json');
+
+            test.equal(ccr_settings.logging.debug_log_level, 7);
+
+            test.done();
+        },
+
+        settingsFromEnvironment : function(test) {
+            test.expect(1);
+
+            process.env['logging:debug_log_level'] = 0;
+
+            var ccr_settings = new ccr_settings_module.Settings('./assets/test_settings.json');
+
+            test.equal(ccr_settings.logging.debug_log_level, 0);
+
+            test.done();
+
+            process.env['rest:port'] = null;
         }
     }
 );

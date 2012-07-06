@@ -5,5 +5,8 @@
     },
     "rest" : {
         "port" : 654321
+    },
+    "logging" : {
+        "debug_log_level" : 7
     }
 }
