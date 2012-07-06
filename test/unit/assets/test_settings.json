@@ -3,10 +3,12 @@
         "hostname" : "datastore_host",
         "port" : 123456
     },
-    "rest" : {
-        "port" : 654321
+    "service" : {
+        "port" : 654321,
+        "endpoint_modules_directory" : "./endpoint_implementations"
     },
     "logging" : {
-        "debug_log_level" : 7
+        "debug_log_level" : 7,
+        "log_level" : 6
     }
 }

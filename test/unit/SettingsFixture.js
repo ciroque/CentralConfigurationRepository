@@ -4,6 +4,8 @@
  * Time: 3:00 PM
  */
 
+var test_configuration_file = './assets/test_settings.json';
+
 var nodeunit_module = require('nodeunit');
 var test_case = nodeunit_module.testCase;
 
@@ -41,30 +43,37 @@ exports.datastoreSettings = test_case(
     }
 );
 
-exports.restSettings = test_case(
+exports.serviceSettings = test_case(
     {
         settingsFromFile : function(test) {
-            test.expect(1);
+            test.expect(2);
 
-            var ccr_settings = new ccr_settings_module.Settings('./assets/test_settings.json');
+            var ccr_settings = new ccr_settings_module.Settings(test_configuration_file);
 
-            test.equal(ccr_settings.rest.port, 654321);
+            test.equal(ccr_settings.service.port, 654321);
+            test.equal(ccr_settings.service.endpoint_modules_directory, './endpoint_implementations');
 
             test.done();
         },
 
         settingsFromEnvironment : function(test) {
-            test.expect(1);
+            test.expect(2);
 
-            process.env['rest:port'] = 654951;
+            var port_override = 654951;
+            var path_override = '/opt/yeah';
 
-            var ccr_settings = new ccr_settings_module.Settings('./assets/test_settings.json');
+            process.env['service:port'] = port_override;
+            process.env['service:endpoint_modules_directory'] = path_override;
 
-            test.equal(ccr_settings.rest.port, 654951);
+            var ccr_settings = new ccr_settings_module.Settings(test_configuration_file);
+
+            test.equal(ccr_settings.service.port, port_override);
+            test.equal(ccr_settings.service.endpoint_modules_directory, path_override);
 
             test.done();
 
-            process.env['rest:port'] = null;
+            process.env['service:port'] = null;
+            process.env['service:endpoint_modules_directory'] = null;
         }
     }
 );
@@ -72,23 +81,29 @@ exports.restSettings = test_case(
 exports.loggingSettings = test_case(
     {
         settingsFromFile : function(test) {
-            test.expect(1);
+            test.expect(2);
 
             var ccr_settings = new ccr_settings_module.Settings('./assets/test_settings.json');
 
             test.equal(ccr_settings.logging.debug_log_level, 7);
+            test.equal(ccr_settings.logging.log_level, 6);
 
             test.done();
         },
 
         settingsFromEnvironment : function(test) {
-            test.expect(1);
+            test.expect(2);
 
-            process.env['logging:debug_log_level'] = 0;
+            var debug_log_level_override = 0;
+            var log_level_override = -1;
+
+            process.env['logging:debug_log_level'] = debug_log_level_override;
+            process.env['logging:log_level'] = log_level_override;
 
             var ccr_settings = new ccr_settings_module.Settings('./assets/test_settings.json');
 
-            test.equal(ccr_settings.logging.debug_log_level, 0);
+            test.equal(ccr_settings.logging.debug_log_level, debug_log_level_override);
+            test.equal(ccr_settings.logging.log_level, log_level_override);
 
             test.done();
 
@@ -96,3 +111,4 @@ exports.loggingSettings = test_case(
         }
     }
 );
+

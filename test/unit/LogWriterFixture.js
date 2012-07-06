@@ -9,6 +9,9 @@ var nodeunit_module = require('nodeunit');
 var test_case = nodeunit_module.testCase;
 
 var log_writer_module = require('../../lib/service/LogWriter');
+var settings_module = require('../../lib/service/Settings');
+
+var settings = new settings_module.Settings();
 
 exports.primaryTestGroup = test_case(
     {
@@ -32,7 +35,7 @@ exports.primaryTestGroup = test_case(
                 setLevel : function() {}
             };
             
-            var log_writer = new log_writer_module.LogWriter(mock_logger);
+            var log_writer = new log_writer_module.LogWriter(settings, mock_logger);
             
             log_writer.writeToLog(0, first, second, third);
 
@@ -67,7 +70,7 @@ exports.logLevelHelperMethodsGroup = test_case(
                 setLevel : function() {}
             };
             
-            var log_writer = new log_writer_module.LogWriter(mock_logger);
+            var log_writer = new log_writer_module.LogWriter(settings, mock_logger);
             
             log_writer.writeDebug(first, second, third);
 
@@ -94,7 +97,7 @@ exports.logLevelHelperMethodsGroup = test_case(
                 setLevel : function() {}
             };
 
-            var log_writer = new log_writer_module.LogWriter(mock_logger);
+            var log_writer = new log_writer_module.LogWriter(settings, mock_logger);
 
             log_writer.writeInfo(first, second, third);
 
@@ -121,7 +124,7 @@ exports.logLevelHelperMethodsGroup = test_case(
                 setLevel : function() {}
             };
             
-            var log_writer = new log_writer_module.LogWriter(mock_logger);
+            var log_writer = new log_writer_module.LogWriter(settings, mock_logger);
             
             log_writer.writeWarn(first, second, third);
 
@@ -148,7 +151,7 @@ exports.logLevelHelperMethodsGroup = test_case(
                 setLevel : function() {}
             };
             
-            var log_writer = new log_writer_module.LogWriter(mock_logger);
+            var log_writer = new log_writer_module.LogWriter(settings, mock_logger);
             
             log_writer.writeError(first, second, third);
 
@@ -175,7 +178,7 @@ exports.logLevelHelperMethodsGroup = test_case(
                 setLevel : function() {}
             };
             
-            var log_writer = new log_writer_module.LogWriter(mock_logger);
+            var log_writer = new log_writer_module.LogWriter(settings, mock_logger);
             
             log_writer.writeCritical(first, second, third);
 
