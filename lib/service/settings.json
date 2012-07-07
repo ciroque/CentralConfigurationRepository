@@ -1,0 +1,14 @@
+{
+    "datastore" : {
+        "hostname" : "localhost",
+        "port" : 0
+    },
+    "service" : {
+        "port" : 38181,
+        "endpoint_modules_directory" : "./endpoint_implementation_modules"
+    },
+    "logging" : {
+        "debug_log_level" : 7,
+        "log_level" : 6
+    }
+}
