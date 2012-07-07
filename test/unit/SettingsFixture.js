@@ -50,7 +50,7 @@ exports.serviceSettings = test_case(
 
             var ccr_settings = new ccr_settings_module.Settings(test_configuration_file);
 
-            test.equal(ccr_settings.service.port, 654321);
+            test.equal(ccr_settings.service.port, 65533);
             test.equal(ccr_settings.service.endpoint_modules_directory, './endpoint_implementations');
 
             test.done();

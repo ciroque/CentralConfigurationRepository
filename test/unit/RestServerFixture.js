@@ -14,7 +14,7 @@ var rest_server_module = require('../../lib/service/RestServer');
 var REST_PORT = 8119;
 
 var settings = {
-    "rest" : {
+    "service" : {
         "port" : REST_PORT
     }
 };
