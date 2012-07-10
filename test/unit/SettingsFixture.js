@@ -120,3 +120,41 @@ exports.loggingSettings = test_case(
     }
 );
 
+
+exports.accessStatisticsTrackerSettings = test_case(
+    {
+        settingsFromFile : function(test) {
+            test.expect(3);
+
+            var ccr_settings = new ccr_settings_module.Settings('./assets/test_settings.json');
+
+            test.equal(ccr_settings.access_statistics.connection_string, 'localhost:11211');
+            test.equal(ccr_settings.access_statistics.query_key_prefix, 'ccrq');
+            test.equal(ccr_settings.access_statistics.update_key_prefix, 'ccru');
+
+            test.done();
+        },
+
+        settingsFromEnvironment : function(test) {
+            test.expect(3);
+
+            var connection_string_override = 'test_connection_string';
+            var query_key_prefix = 'query_override';
+            var update_key_prefix = 'update_override';
+
+            process.env['access_statistics:connection_string'] = connection_string_override;
+            process.env['access_statistics:query_key_prefix'] = query_key_prefix;
+            process.env['access_statistics:update_key_prefix'] = update_key_prefix;
+
+            var ccr_settings = new ccr_settings_module.Settings('./assets/test_settings.json');
+
+            test.equal(ccr_settings.access_statistics.connection_string, connection_string_override);
+            test.equal(ccr_settings.access_statistics.query_key_prefix, query_key_prefix);
+            test.equal(ccr_settings.access_statistics.update_key_prefix, update_key_prefix);
+
+            test.done();
+
+            process.env['rest:port'] = null;
+        }
+    }
+);

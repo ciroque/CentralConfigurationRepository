@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f00f0f7-0337-41a3-a4b2-031b3c120377" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/service/AccessStatisticsTracker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/unit/AccessStatisticsTrackerFixture.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/service/LogWriter.js" afterPath="$PROJECT_DIR$/lib/service/LogWriter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/service/RestServer.js" afterPath="$PROJECT_DIR$/lib/service/RestServer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/service/Settings.js" afterPath="$PROJECT_DIR$/lib/service/Settings.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/service/settings.json" afterPath="$PROJECT_DIR$/lib/service/settings.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/unit/assets/test_settings.json" afterPath="$PROJECT_DIR$/test/unit/assets/test_settings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/unit/RestServerFixture.js" afterPath="$PROJECT_DIR$/test/unit/RestServerFixture.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/unit/SettingsFixture.js" afterPath="$PROJECT_DIR$/test/unit/SettingsFixture.js" />
     </list>
     <ignored path="CentralConfigurationRepository.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,21 +28,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AccessStatisticsTrackerFixture.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/unit/AccessStatisticsTrackerFixture.js">
+      <file leaf-file-name="SettingsFixture.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/unit/SettingsFixture.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="649" selection-end="649" vertical-scroll-proportion="0.33333334">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state line="130" column="0" selection-start="4152" selection-end="4152" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccessStatisticsTracker.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/service/AccessStatisticsTracker.js">
+      <file leaf-file-name="test_settings.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/unit/assets/test_settings.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="1" selection-start="2688" selection-end="2688" vertical-scroll-proportion="0.0">
+            <state line="1" column="22" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/service/settings.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="24" selection-start="267" selection-end="282" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Settings.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/service/Settings.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="44" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RestServerFixture.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/unit/RestServerFixture.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="10" selection-start="990" selection-end="990" vertical-scroll-proportion="0.33333334">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RestServer.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/service/RestServer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="46" column="60" selection-start="1577" selection-end="1577" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogWriter.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/service/LogWriter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="30" selection-start="1246" selection-end="1256" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -64,22 +104,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/lib/service/RestServer.js" />
-        <option value="$PROJECT_DIR$/test/unit/RestServerFixture.js" />
         <option value="$PROJECT_DIR$/lib/service/WebService.js" />
         <option value="$PROJECT_DIR$/test/package.json" />
         <option value="$PROJECT_DIR$/test/api/DefaultEndpoint.js" />
         <option value="$PROJECT_DIR$/test/run_api_tests.sh" />
-        <option value="$PROJECT_DIR$/test/unit/SettingsFixture.js" />
         <option value="$PROJECT_DIR$/test/api/DefaultEndpoint_spec.js" />
         <option value="$PROJECT_DIR$/lib/service/StatisticalLogger.js" />
-        <option value="$PROJECT_DIR$/lib/service/Settings.js" />
-        <option value="$PROJECT_DIR$/test/unit/assets/test_settings.json" />
-        <option value="$PROJECT_DIR$/lib/service/settings.json" />
         <option value="$PROJECT_DIR$/lib/service/LogWriter.js" />
         <option value="$PROJECT_DIR$/test/unit/StatisticalLoggerFixture.js" />
         <option value="$PROJECT_DIR$/lib/service/AccessStatisticsTracker.js" />
         <option value="$PROJECT_DIR$/test/unit/AccessStatisticsTrackerFixture.js" />
+        <option value="$PROJECT_DIR$/test/unit/assets/test_settings.json" />
+        <option value="$PROJECT_DIR$/lib/service/settings.json" />
+        <option value="$PROJECT_DIR$/lib/service/Settings.js" />
+        <option value="$PROJECT_DIR$/test/unit/SettingsFixture.js" />
+        <option value="$PROJECT_DIR$/lib/service/RestServer.js" />
+        <option value="$PROJECT_DIR$/test/unit/RestServerFixture.js" />
       </list>
     </option>
   </component>
@@ -255,8 +295,8 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="Template Data Languages" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -313,7 +353,11 @@
       <created>1341891379651</created>
       <updated>1341891379651</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="adding AccessStatisticsTracker">
+      <created>1341894585265</created>
+      <updated>1341894585265</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -340,10 +384,9 @@
     <frame x="-1" y="-4" width="1922" height="1084" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290461" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42443728" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290461" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1523458" sideWeight="0.6709539" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -355,6 +398,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42443728" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -397,7 +441,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding AccessStatisticsTracker" />
+    <option name="LAST_COMMIT_MESSAGE" value="- adding tests for AccessStatisticsTracker settings &#10;- correcting failing RestServer test" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -418,6 +462,7 @@
     <MESSAGE value="correcting tests" />
     <MESSAGE value="adding API test" />
     <MESSAGE value="adding AccessStatisticsTracker" />
+    <MESSAGE value="- adding tests for AccessStatisticsTracker settings &#10;- correcting failing RestServer test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -428,110 +473,92 @@
         <state line="14" column="2" selection-start="208" selection-end="208" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/RestServerFixture.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="340" selection-end="340" vertical-scroll-proportion="0.057331864" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/service/WebService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="24" selection-start="1281" selection-end="1281" vertical-scroll-proportion="0.61962515">
-          <folding />
-        </state>
+        <state line="41" column="24" selection-start="1281" selection-end="1281" vertical-scroll-proportion="0.61962515" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="176" selection-end="236" vertical-scroll-proportion="0.16538037">
-          <folding />
-        </state>
+        <state line="10" column="0" selection-start="176" selection-end="236" vertical-scroll-proportion="0.16538037" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="1" selection-start="569" selection-end="569" vertical-scroll-proportion="0.31422272">
-          <folding />
-        </state>
+        <state line="19" column="1" selection-start="569" selection-end="569" vertical-scroll-proportion="0.31422272" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/run_unit_tests.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="4" selection-start="344" selection-end="408" vertical-scroll-proportion="0.38037485">
-          <folding />
-        </state>
+        <state line="23" column="4" selection-start="344" selection-end="408" vertical-scroll-proportion="0.38037485" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/run_api_tests.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="14" selection-start="27" selection-end="27" vertical-scroll-proportion="0.033076074">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/SettingsFixture.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="53" selection-start="1184" selection-end="1184" vertical-scroll-proportion="0.14884233">
-          <folding />
-        </state>
+        <state line="2" column="14" selection-start="27" selection-end="27" vertical-scroll-proportion="0.033076074" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/api/DefaultEndpoint_spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="37" selection-start="196" selection-end="196" vertical-scroll-proportion="0.16538037">
-          <folding />
-        </state>
+        <state line="10" column="37" selection-start="196" selection-end="196" vertical-scroll-proportion="0.16538037" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/service/RestServer.js">
+    <entry file="file://$PROJECT_DIR$/test/unit/AccessStatisticsTrackerFixture.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="95" selection-start="736" selection-end="739" vertical-scroll-proportion="0.33076075">
-          <folding />
-        </state>
+        <state line="19" column="0" selection-start="649" selection-end="649" vertical-scroll-proportion="0.31422272" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/service/Settings.js">
+    <entry file="file://$PROJECT_DIR$/lib/service/AccessStatisticsTracker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="77" selection-start="461" selection-end="461" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="93" column="1" selection-start="2688" selection-end="2688" vertical-scroll-proportion="0.8842337" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/unit/assets/test_settings.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="5" selection-start="328" selection-end="328" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/service/settings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="5" selection-start="343" selection-end="343" vertical-scroll-proportion="0.0">
+        <state line="1" column="22" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/service/LogWriter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="180" selection-end="180" vertical-scroll-proportion="0.14884233">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/service/AccessStatisticsTracker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="1" selection-start="2688" selection-end="2688" vertical-scroll-proportion="0.0">
+        <state line="45" column="30" selection-start="1246" selection-end="1256" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/AccessStatisticsTrackerFixture.js">
+    <entry file="file://$PROJECT_DIR$/lib/service/Settings.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="649" selection-end="649" vertical-scroll-proportion="0.33333334">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state line="17" column="44" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/service/settings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="24" selection-start="267" selection-end="282" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/SettingsFixture.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="130" column="0" selection-start="4152" selection-end="4152" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/service/RestServer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="60" selection-start="1577" selection-end="1577" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/RestServerFixture.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="10" selection-start="990" selection-end="990" vertical-scroll-proportion="0.33333334">
+          <folding />
         </state>
       </provider>
     </entry>
