@@ -46,10 +46,12 @@ exports.datastoreSettings = test_case(
 exports.serviceSettings = test_case(
     {
         settingsFromFile : function(test) {
-            test.expect(2);
+            test.expect(4);
 
             var ccr_settings = new ccr_settings_module.Settings(test_configuration_file);
 
+            test.equal(ccr_settings.service.protocol, 'http');
+            test.equal(ccr_settings.service.hostname, 'localhost');
             test.equal(ccr_settings.service.port, 65533);
             test.equal(ccr_settings.service.endpoint_modules_directory, './endpoint_implementations');
 
@@ -57,16 +59,22 @@ exports.serviceSettings = test_case(
         },
 
         settingsFromEnvironment : function(test) {
-            test.expect(2);
+            test.expect(4);
 
+            var protocol_override = 'prot';
+            var hostname_override = 'service_host';
             var port_override = 654951;
             var path_override = '/opt/yeah';
 
+            process.env['service:protocol'] = protocol_override;
+            process.env['service:hostname'] = hostname_override;
             process.env['service:port'] = port_override;
             process.env['service:endpoint_modules_directory'] = path_override;
 
             var ccr_settings = new ccr_settings_module.Settings(test_configuration_file);
 
+            test.equal(ccr_settings.service.protocol, protocol_override);
+            test.equal(ccr_settings.service.hostname, hostname_override);
             test.equal(ccr_settings.service.port, port_override);
             test.equal(ccr_settings.service.endpoint_modules_directory, path_override);
 

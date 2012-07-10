@@ -4,6 +4,8 @@
         "port" : 123456
     },
     "service" : {
+        "protocol" : "http",
+        "hostname" : "localhost",
         "port" : 65533,
         "endpoint_modules_directory" : "./endpoint_implementations"
     },
