@@ -28,7 +28,7 @@ exports.queryStatisticsLoggingTests = test_case(
             var scope = 'scope';
             var setting = 'setting';
             
-            var access_statistics_tracker = new access_statistics_module.AccessStatisticsTracker(logger, settings);
+            var access_statistics_tracker = new access_statistics_module.AccessStatisticsTracker(settings, logger);
         
             access_statistics_tracker.recordQuery(
                 environment,
@@ -67,7 +67,7 @@ exports.updateStatisticsLoggingTests = test_case(
             var scope = 'scope';
             var setting = 'setting';
             
-            var access_statistics_tracker = new access_statistics_module.AccessStatisticsTracker(logger, settings);
+            var access_statistics_tracker = new access_statistics_module.AccessStatisticsTracker(settings, logger);
         
             access_statistics_tracker.recordUpdate(
                 environment,
