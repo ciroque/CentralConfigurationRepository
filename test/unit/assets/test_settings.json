@@ -1,16 +1,21 @@
 {
+    "access_statistics" : {
+        "connection_string" : "localhost:11211",
+        "query_key_prefix" : "ccrq",
+        "update_key_prefix" : "ccru"
+    },
     "datastore" : {
         "hostname" : "datastore_host",
         "port" : 123456
+    },
+    "logging" : {
+        "debug_log_level" : 7,
+        "log_level" : 6
     },
     "service" : {
         "protocol" : "http",
         "hostname" : "localhost",
         "port" : 65533,
         "endpoint_modules_directory" : "./endpoint_implementations"
-    },
-    "logging" : {
-        "debug_log_level" : 7,
-        "log_level" : 6
     }
 }
