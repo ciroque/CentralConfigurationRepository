@@ -12,7 +12,7 @@
         , "jasmine-node" : "1.0.26"
         , "memcached" : ">=0.0.10"
         , "mongodb" : "1.0.0"
-        , "nconf" : ">=0.0.1"
+        , "n-app-conf" : ">=0.0.2"
         , "nodeunit" : "0.7.4"
         , "node.extend" : "1.0.0"
         , "restify" : "git://github.com/mcavage/node-restify.git#dec58eb365577bb928e5402997ebeca620736b95"

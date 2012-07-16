@@ -5,8 +5,13 @@
         "update_key_prefix" : "ccru"
     },
     "datastore" : {
+        "database_name" : "scs",
         "hostname" : "localhost",
-        "port" : 0
+        "port" : 0,
+        "collection_names" : {
+            "settings_collection" : "settings",
+            "audit_collection" : "auditing"
+        }
     },
     "logging" : {
         "debug_log_level" : 7,

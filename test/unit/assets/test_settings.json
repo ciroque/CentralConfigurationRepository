@@ -5,6 +5,7 @@
         "update_key_prefix" : "ccru"
     },
     "datastore" : {
+        "database_name" : "scs_tests",
         "hostname" : "datastore_host",
         "port" : 123456
     },

@@ -9,9 +9,9 @@ var nodeunit_module = require('nodeunit');
 var test_case = nodeunit_module.testCase;
 
 var log_writer_module = require('../../lib/service/LogWriter');
-var settings_module = require('../../lib/service/Settings');
+var settings_module = require('n-app-conf');
 
-var settings = new settings_module.Settings();
+var settings = new settings_module.Settings('./assets/test_settings.json');
 
 exports.primaryTestGroup = test_case(
     {
