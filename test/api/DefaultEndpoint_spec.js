@@ -6,7 +6,7 @@
 
 var frisby_module = require('frisby');
 
-var settings_module = require('../../lib/service/Settings');
+var settings_module = require('n-app-conf');
 
 var settings = new settings_module.Settings('../../lib/service/settings.json');
 

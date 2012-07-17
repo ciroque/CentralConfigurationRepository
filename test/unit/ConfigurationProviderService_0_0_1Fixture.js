@@ -1,0 +1,116 @@
+/**
+ * User: steve
+ * Date: 7/16/12
+ * Time: 3:19 PM
+ */
+
+var nodeunit_module = require('nodeunit');
+var test_case = nodeunit_module.testCase;
+
+var cps_0_0_1_module = require('../../lib/service/endpoint_implementation_modules/ConfigurationProviderService_0_0_1');
+
+exports.primaryTestGroup = test_case(
+    {
+        getVersion : function(test) {
+
+            test.expect(1);
+
+            var mock_data_store = {
+                queryCurrentSetting : function(env, app, scope, setting, handler) {
+                    handler(null);
+                }
+            };
+
+            var mock_log_writer = {
+                writeDebug : function(msg) {},
+                writeError : function(msg) {}
+            };
+
+            var mock_access_stats_tracker = {
+                recordQuery : function(env, app, scope, setting, handler) {
+                    handler(null);
+                }
+            }
+
+            var cps_0_0_1 = new cps_0_0_1_module.ConfigurationProviderService_0_0_1(
+                mock_data_store,
+                mock_log_writer,
+                mock_access_stats_tracker
+            );
+
+            var version = cps_0_0_1.getVersion();
+
+            test.equal(version, '0.0.1');
+
+            test.done();
+        },
+
+        handleRequest : function(test) {
+            test.expect(1);
+
+            var result = [
+                {
+                    "_id": "4ff3371ca23a0ea2fecb8b87",
+                    "key": {
+                        "environment": "default",
+                        "application": "application",
+                        "scope": "scope",
+                        "setting": "setting"
+                    },
+                    "value": "true",
+                    "temporalization": {
+                        "cache_lifetime": "600",
+                        "eff_date": "2010-01-03T08:00:00.000Z",
+                        "end_date": "9999-12-31T08:00:00.000Z"
+                    }
+                }
+            ];
+
+            var mock_data_store = {
+                queryCurrentSetting : function(env, app, scope, setting, handler) {
+                    handler(null, result);
+                }
+            };
+
+            var mock_log_writer = {
+                writeDebug : function(msg) {
+                },
+                writeError : function(msg) {
+                }
+            };
+
+            var mock_access_stats_tracker = {
+                recordQuery : function(env, app, scope, setting, handler) {
+                    handler(null);
+                }
+            }
+
+            var cps_0_0_1 = new cps_0_0_1_module.ConfigurationProviderService_0_0_1(
+                mock_data_store,
+                mock_log_writer,
+                mock_access_stats_tracker
+            );
+
+            var mock_req = {
+                params : {
+                    environment : 'default',
+                    application : 'application',
+                    scope : 'scope',
+                    setting : 'setting'
+                }
+            };
+
+            var mock_res = {
+                send : function(body) {
+                    console.log(body);
+                    test.ok(body != null);
+                },
+                end : function() {
+                    test.done();
+                }
+            };
+
+            cps_0_0_1.handleRequest(mock_req, mock_res);
+        }
+    }
+);
