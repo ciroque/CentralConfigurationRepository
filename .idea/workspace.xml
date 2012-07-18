@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f00f0f7-0337-41a3-a4b2-031b3c120377" name="Default" comment="- route handlers need to be bind'ed to the implementing module&#10;- keep implementation instantiations around to avoid GC&#10;- miscellaneous formatting">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/seed_data/initial_settings.dat" />
+    <list default="true" id="9f00f0f7-0337-41a3-a4b2-031b3c120377" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/service/EndpointRegistrar.js" afterPath="$PROJECT_DIR$/lib/service/EndpointRegistrar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/service/WebService.js" afterPath="$PROJECT_DIR$/lib/service/WebService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationProviderService_0_0_1.js" afterPath="$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationProviderService_0_0_1.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/service/settings.json" afterPath="$PROJECT_DIR$/lib/service/settings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/unit/DataStoreFixture.js" afterPath="$PROJECT_DIR$/test/unit/DataStoreFixture.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/unit/assets/test_settings.dat" afterPath="$PROJECT_DIR$/test/unit/assets/test_settings.dat" />
     </list>
     <ignored path="CentralConfigurationRepository.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,65 +26,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="settings.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/service/settings.json">
+      <file leaf-file-name="DataStoreFixture.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/unit/DataStoreFixture.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="18" selection-start="470" selection-end="479" vertical-scroll-proportion="0.0">
+            <state line="188" column="46" selection-start="4940" selection-end="4940" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_settings.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/unit/assets/test_settings.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="22" selection-start="271" selection-end="276" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebService.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/service/WebService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="55" selection-start="2356" selection-end="2356" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConfigurationProviderService_0_0_1.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ConfigurationProviderService_0_0_1.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationProviderService_0_0_1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="0" selection-start="2117" selection-end="2117" vertical-scroll-proportion="1.0866667">
+            <state line="77" column="0" selection-start="2117" selection-end="2117" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataStore.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/service/DataStore.js">
+      <file leaf-file-name="ConfigurationProviderService_0_0_1Fixture.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/unit/ConfigurationProviderService_0_0_1Fixture.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="250" column="46" selection-start="7580" selection-end="7590" vertical-scroll-proportion="-18.96">
+            <state line="85" column="12" selection-start="2520" selection-end="2520" vertical-scroll-proportion="0.7442117">
               <folding>
-                <element signature="n#!!doc;n#buildDiscriminatorSettingsObject#0" expanded="false" />
-                <element signature="n#!!doc;n#buildFindParameters#0" expanded="false" />
-                <element signature="n#!!block;n#buildFindParameters#0" expanded="false" />
-                <element signature="n#!!doc;n#buildMongoDbInstance#0" expanded="false" />
-                <element signature="n#!!doc;n#buildQuery#0" expanded="false" />
-                <element signature="n#!!doc;n#buildQueryWithDateRestriction#0" expanded="false" />
-                <element signature="n#!!block;n#buildQueryWithDateRestriction#0" expanded="false" />
-                <element signature="n#!!doc;n#useDistinct#0" expanded="false" />
-                <element signature="n#!!doc;n#useFind#0" expanded="false" />
+                <element signature="e#1995#2157#0" expanded="false" />
+                <element signature="e#2760#2991#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EndpointRegistrar.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/service/EndpointRegistrar.js">
+      <file leaf-file-name="test_settings.dat" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/unit/assets/test_settings.dat">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="29" selection-start="515" selection-end="515" vertical-scroll-proportion="0.0">
+            <state line="2" column="65" selection-start="590" selection-end="590" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -113,8 +85,6 @@
         <option value="$PROJECT_DIR$/test/unit/SettingsFixture.js" />
         <option value="$PROJECT_DIR$/test/unit/assets/test_documents.dat" />
         <option value="$PROJECT_DIR$/test/run_unit_tests.sh" />
-        <option value="$PROJECT_DIR$/test/unit/assets/test_settings.dat" />
-        <option value="$PROJECT_DIR$/test/unit/DataStoreFixture.js" />
         <option value="$PROJECT_DIR$/lib/service/DataStore.js" />
         <option value="$PROJECT_DIR$/test/unit/ConfigurationProviderService_0_0_1Fixture.js" />
         <option value="$PROJECT_DIR$/lib/service/settings.json" />
@@ -122,6 +92,8 @@
         <option value="$PROJECT_DIR$/lib/service/EndpointRegistrar.js" />
         <option value="$PROJECT_DIR$/lib/service/WebService.js" />
         <option value="$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationProviderService_0_0_1.js" />
+        <option value="$PROJECT_DIR$/test/unit/assets/test_settings.dat" />
+        <option value="$PROJECT_DIR$/test/unit/DataStoreFixture.js" />
       </list>
     </option>
   </component>
@@ -440,7 +412,11 @@
       <created>1342647250937</created>
       <updated>1342647250937</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="- route handlers need to be bind'ed to the implementing module&#10;- keep implementation instantiations around to avoid GC&#10;- miscellaneous formatting">
+      <created>1342649300658</created>
+      <updated>1342649300658</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -473,10 +449,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290461" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21085925" sideWeight="0.6709539" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21085925" sideWeight="0.6709539" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39978564" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="JsTestDriver Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -575,13 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/DataStoreFixture.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="46" selection-start="3572" selection-end="3572" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/node_modules/nodeunit/lib/assert.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="132" column="6" selection-start="4436" selection-end="4436" vertical-scroll-proportion="0.33333334">
@@ -601,16 +570,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/ConfigurationProviderService_0_0_1Fixture.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="12" selection-start="2520" selection-end="2520" vertical-scroll-proportion="1.339581">
-          <folding>
-            <element signature="e#1995#2157#0" expanded="false" />
-            <element signature="e#2760#2991#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/service/settings.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="18" selection-start="470" selection-end="479" vertical-scroll-proportion="0.0">
@@ -625,13 +584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/assets/test_settings.dat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="264" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/seed_data/initial_settings.dat">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="130" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0">
@@ -641,7 +593,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/service/EndpointRegistrar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="29" selection-start="515" selection-end="515" vertical-scroll-proportion="0.0">
+        <state line="20" column="29" selection-start="515" selection-end="515" vertical-scroll-proportion="0.33076075">
           <folding />
         </state>
       </provider>
@@ -655,7 +607,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/service/DataStore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="250" column="46" selection-start="7580" selection-end="7590" vertical-scroll-proportion="-18.96">
+        <state line="250" column="46" selection-start="7580" selection-end="7590" vertical-scroll-proportion="0.53741497">
           <folding>
             <element signature="n#!!doc;n#buildDiscriminatorSettingsObject#0" expanded="false" />
             <element signature="n#!!doc;n#buildFindParameters#0" expanded="false" />
@@ -670,10 +622,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/assets/test_settings.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="65" selection-start="590" selection-end="590" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/DataStoreFixture.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="188" column="46" selection-start="4940" selection-end="4940" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationProviderService_0_0_1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="0" selection-start="2117" selection-end="2117" vertical-scroll-proportion="1.0866667">
+        <state line="77" column="0" selection-start="2117" selection-end="2117" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/ConfigurationProviderService_0_0_1Fixture.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="12" selection-start="2520" selection-end="2520" vertical-scroll-proportion="0.7442117">
+          <folding>
+            <element signature="e#1995#2157#0" expanded="false" />
+            <element signature="e#2760#2991#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

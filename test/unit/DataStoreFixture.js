@@ -32,7 +32,7 @@ exports.queryCurrentSettingGroup = test_case(
         },
 
         noParametersReturnsListOfEnvironments : function(test) {
-            test.expect(3);
+
 
             var self = this;
 
@@ -42,15 +42,15 @@ exports.queryCurrentSettingGroup = test_case(
                 null,
                 null,
                 function(err, settings) {
+                    test.expect(2 + settings.length);
                     test.ok(err == null, err);
-
-                    test.equal(settings.length, 1);
+                    test.equal(settings.length, 3);
 
                     self.log_writer.writeDebug(JSON.stringify(settings));
 
-                    var setting = settings[0];
-
-                    test.ok(setting.key.environment != null);
+                    for(var index = 0; index < settings.length; index++) {
+                        test.ok(settings[index].key.environment != null);
+                    }
 
                     test.done();
                 }
@@ -60,7 +60,7 @@ exports.queryCurrentSettingGroup = test_case(
         },
 
         environmentParameterReturnsListOfApplications : function(test) {
-            test.expect(3);
+
 
             var self = this;
 
@@ -70,15 +70,18 @@ exports.queryCurrentSettingGroup = test_case(
                 null,
                 null,
                 function(err, settings) {
+
+                    test.expect(2 + settings.length);
+
                     test.ok(err == null, err);
 
-                    test.equal(settings.length, 1);
+                    test.equal(settings.length, 2);
 
                     self.log_writer.writeDebug(JSON.stringify(settings));
 
-                    var setting = settings[0];
-
-                    test.ok(setting.key.application != null);
+                    for(var index = 0; index < settings.length; index++) {
+                        test.ok(settings[index].key.application != null);
+                    }
 
                     test.done();
                 }
@@ -162,6 +165,36 @@ exports.queryCurrentSettingGroup = test_case(
                     var setting = settings[0];
 
                     test.equal(setting.value, 'the_value');
+
+                    test.done();
+                }
+            );
+        },
+
+        twoSettingsAreReturnedWhenDefaultIsPresent : function(test) {
+
+            test.expect(4);
+
+            var self = this;
+
+            this.data_store.retrieveActiveSetting(
+                'prod',
+                'application2',
+                'scope',
+                'setting',
+                function(err, settings) {
+
+                    self.log_writer.writeDebug(JSON.stringify(settings));
+
+                    test.ok(err == null, err);
+
+                    test.equal(settings.length, 2);
+
+                    var setting = settings[0];
+                    test.equal(setting.key.environment, 'default');
+
+                    var setting = settings[1];
+                    test.equal(setting.key.environment, 'prod');
 
                     test.done();
                 }
