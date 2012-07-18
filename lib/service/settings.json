@@ -4,8 +4,8 @@
         "query_key_prefix" : "ccrq",
         "update_key_prefix" : "ccru"
     },
-    "datastore" : {
-        "database_name" : "scs",
+    "data_store" : {
+        "database_name" : "ccr",
         "hostname" : "localhost",
         "port" : 0,
         "collection_names" : {

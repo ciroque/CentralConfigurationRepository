@@ -4,10 +4,13 @@
         "query_key_prefix" : "ccrq",
         "update_key_prefix" : "ccru"
     },
-    "datastore" : {
-        "database_name" : "scs_tests",
-        "hostname" : "datastore_host",
-        "port" : 123456
+    "data_store" : {
+        "database_name" : "ccr_tests",
+        "hostname" : "localhost",
+        "port" : 27017,
+        "collection_names" : {
+            "settings_collection" : "settings"
+        }
     },
     "logging" : {
         "debug_log_level" : 7,

@@ -16,21 +16,21 @@ exports.primaryTestGroup = test_case(
             test.expect(1);
 
             var mock_data_store = {
-                queryCurrentSetting : function(env, app, scope, setting, handler) {
+                retrieveActiveSetting : function(env, app, scope, setting, handler) {
                     handler(null);
                 }
             };
 
             var mock_log_writer = {
-                writeDebug : function(msg) {},
-                writeError : function(msg) {}
+                writeDebug : function() {},
+                writeError : function() {}
             };
 
             var mock_access_stats_tracker = {
                 recordQuery : function(env, app, scope, setting, handler) {
                     handler(null);
                 }
-            }
+            };
 
             var cps_0_0_1 = new cps_0_0_1_module.ConfigurationProviderService_0_0_1(
                 mock_data_store,
@@ -46,7 +46,7 @@ exports.primaryTestGroup = test_case(
         },
 
         handleRequest : function(test) {
-            test.expect(1);
+            test.expect(6);
 
             var result = [
                 {
@@ -67,15 +67,15 @@ exports.primaryTestGroup = test_case(
             ];
 
             var mock_data_store = {
-                queryCurrentSetting : function(env, app, scope, setting, handler) {
+                retrieveActiveSetting : function(env, app, scope, setting, handler) {
                     handler(null, result);
                 }
             };
 
             var mock_log_writer = {
-                writeDebug : function(msg) {
+                writeDebug : function() {
                 },
-                writeError : function(msg) {
+                writeError : function() {
                 }
             };
 
@@ -83,7 +83,7 @@ exports.primaryTestGroup = test_case(
                 recordQuery : function(env, app, scope, setting, handler) {
                     handler(null);
                 }
-            }
+            };
 
             var cps_0_0_1 = new cps_0_0_1_module.ConfigurationProviderService_0_0_1(
                 mock_data_store,
@@ -102,8 +102,20 @@ exports.primaryTestGroup = test_case(
 
             var mock_res = {
                 send : function(body) {
-                    console.log(body);
+
                     test.ok(body != null);
+
+                    var body_obj = eval(body);
+
+                    test.equal(body_obj.length, 1);
+
+                    var setting = body_obj[0];
+
+                    test.equal(setting.key.environment, 'default');
+                    test.equal(setting.key.application, 'application');
+                    test.equal(setting.key.scope, 'scope');
+                    test.equal(setting.key.setting, 'setting');
+
                 },
                 end : function() {
                     test.done();

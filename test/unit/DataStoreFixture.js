@@ -4,11 +4,168 @@
  * Time: 2:59 PM
  */
 
+var TEST_SETTINGS_PATH = './assets/test_settings.json';
+
 var nodeunit_module = require('nodeunit');
 var test_case = nodeunit_module.testCase;
 
-exports.primaryTestGroup = test_case(
-    {
+var settings_module = require('n-app-conf');
+var log_writer_module = require('../../lib/service/LogWriter');
 
+var data_store_factory = require('../../lib/service/DataStoreFactory');
+
+exports.queryCurrentSettingGroup = test_case(
+    {
+        setUp : function(callback) {
+
+            process.env['logging__log_level'] = 7;
+
+            this.settings = new settings_module.Settings(TEST_SETTINGS_PATH);
+            this.log_writer = new log_writer_module.LogWriter(this.settings);
+            this.data_store = data_store_factory.createDataStore(this.settings, this.log_writer);
+            callback();
+        },
+
+        tearDown : function(callback) {
+            delete process.env['logging__log_level'];
+            callback();
+        },
+
+        noParametersReturnsListOfEnvironments : function(test) {
+            test.expect(3);
+
+            var self = this;
+
+            this.data_store.retrieveActiveSetting(
+                null,
+                null,
+                null,
+                null,
+                function(err, settings) {
+                    test.ok(err == null, err);
+
+                    test.equal(settings.length, 1);
+
+                    self.log_writer.writeDebug(JSON.stringify(settings));
+
+                    var setting = settings[0];
+
+                    test.ok(setting.key.environment != null);
+
+                    test.done();
+                }
+            );
+
+
+        },
+
+        environmentParameterReturnsListOfApplications : function(test) {
+            test.expect(3);
+
+            var self = this;
+
+            this.data_store.retrieveActiveSetting(
+                'environment',
+                null,
+                null,
+                null,
+                function(err, settings) {
+                    test.ok(err == null, err);
+
+                    test.equal(settings.length, 1);
+
+                    self.log_writer.writeDebug(JSON.stringify(settings));
+
+                    var setting = settings[0];
+
+                    test.ok(setting.key.application != null);
+
+                    test.done();
+                }
+            );
+
+
+        },
+
+        environmentApplicationParametersReturnListOfScopes : function(test) {
+            test.expect(3);
+
+            var self = this;
+
+            this.data_store.retrieveActiveSetting(
+                'environment',
+                'application',
+                null,
+                null,
+                function(err, settings) {
+                    test.ok(err == null, err);
+
+                    test.equal(settings.length, 1);
+
+                    self.log_writer.writeDebug(JSON.stringify(settings));
+
+                    var setting = settings[0];
+
+                    test.ok(setting.key.scope != null);
+
+                    test.done();
+                }
+            );
+
+
+        },
+
+        environmentApplicationScopeParametersReturnListOfSettings : function(test) {
+            test.expect(3);
+
+            var self = this;
+
+            this.data_store.retrieveActiveSetting(
+                'environment',
+                'application',
+                'scope',
+                null,
+                function(err, settings) {
+                    test.ok(err == null, err);
+
+                    test.equal(settings.length, 1);
+
+                    self.log_writer.writeDebug(JSON.stringify(settings));
+
+                    var setting = settings[0];
+
+                    test.ok(setting.key.setting != null);
+
+                    test.done();
+                }
+            );
+
+
+        },
+
+        oneSettingIsReturnedWhenNoDefaultIsPresent : function(test) {
+
+            test.expect(3);
+
+
+            this.data_store.retrieveActiveSetting(
+                'environment',
+                'application',
+                'scope',
+                'setting',
+                function(err, settings) {
+
+                    test.ok(err == null, err);
+
+                    test.equal(settings.length, 1);
+
+                    var setting = settings[0];
+
+                    test.equal(setting.value, 'the_value');
+
+                    test.done();
+                }
+            );
+        }
     }
 );

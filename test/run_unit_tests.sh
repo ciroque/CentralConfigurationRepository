@@ -2,6 +2,8 @@
 
 clear
 
+export logging__log_level = 7
+
 if [[ ("$#" == 1 && $1 =~ ^[0-9] ) ]]; then
     export CCR_LOG_WRITER_LOG_LEVEL=$1
 fi
@@ -15,10 +17,10 @@ writeToConsole() {
     echo ================================================================================
 }
 
-writeToConsole 'Preparing datastore with test documents...'
+writeToConsole 'Preparing data store with test documents...'
+mongoimport -d ccr_tests -c settings --drop --file ./assets/test_settings.dat
 
 writeToConsole 'Running tests via nodeunit...'
-
 nodeunit .
 
 popd

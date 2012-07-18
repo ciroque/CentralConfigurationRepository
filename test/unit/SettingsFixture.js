@@ -18,9 +18,9 @@ exports.datastoreSettings = test_case(
 
             var ccr_settings = new ccr_settings_module.Settings(CONFIGURATION_TEST_FILENAME);
 
-            test.equal(ccr_settings.datastore.database_name, 'scs_tests');
-            test.equal(ccr_settings.datastore.hostname, 'datastore_host');
-            test.equal(ccr_settings.datastore.port  , 123456);
+            test.equal(ccr_settings.data_store.database_name, 'ccr_tests');
+            test.equal(ccr_settings.data_store.hostname, 'localhost');
+            test.equal(ccr_settings.data_store.port  , 27017);
 
             test.done();
         },
@@ -31,22 +31,22 @@ exports.datastoreSettings = test_case(
             var hostname_override = 'env_datastore_host';
             var port_override = 951753;
 
-            process.env['datastore__database_name'] = database_name_override;
-            process.env['datastore__hostname'] = hostname_override;
-            process.env['datastore__port'] = port_override;
+            process.env['data_store__database_name'] = database_name_override;
+            process.env['data_store__hostname'] = hostname_override;
+            process.env['data_store__port'] = port_override;
 
             test.expect(3);
 
             var ccr_settings = new ccr_settings_module.Settings(CONFIGURATION_TEST_FILENAME);
 
-            test.equal(ccr_settings.datastore.database_name, database_name_override);
-            test.equal(ccr_settings.datastore.hostname, hostname_override);
-            test.equal(ccr_settings.datastore.port  , port_override);
+            test.equal(ccr_settings.data_store.database_name, database_name_override);
+            test.equal(ccr_settings.data_store.hostname, hostname_override);
+            test.equal(ccr_settings.data_store.port  , port_override);
 
             test.done();
 
-            process.env['datastore__hostname'] = null;
-            process.env['datastore__port'] = null;
+            delete process.env['data_store__hostname'];
+            delete process.env['data_store__port'];
         }
     }
 );
@@ -88,10 +88,10 @@ exports.serviceSettings = test_case(
 
             test.done();
 
-            process.env['service__protocol'] = null;
-            process.env['service__hostname'] = null;
-            process.env['service__port'] = null;
-            process.env['service__endpoint_modules_directory'] = null;
+            delete process.env['service__protocol'];
+            delete process.env['service__hostname'];
+            delete process.env['service__port'];
+            delete process.env['service__endpoint_modules_directory'];
         }
     }
 );
@@ -125,8 +125,8 @@ exports.loggingSettings = test_case(
 
             test.done();
 
-            process.env['logging__debug_log_level'] = null;
-            process.env['logging__log_level'] = null;
+            delete process.env['logging__debug_log_level'];
+            delete process.env['logging__log_level'];
         }
     }
 );
@@ -165,9 +165,9 @@ exports.accessStatisticsTrackerSettings = test_case(
 
             test.done();
 
-            process.env['access_statistics__connection_string'] = null;
-            process.env['access_statistics__query_key_prefix'] = null;
-            process.env['access_statistics__update_key_prefix'] = null;
+            delete process.env['access_statistics__connection_string'];
+            delete process.env['access_statistics__query_key_prefix'];
+            delete process.env['access_statistics__update_key_prefix'];
         }
     }
 );
