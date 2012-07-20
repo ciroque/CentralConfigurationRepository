@@ -49,7 +49,7 @@ exports.primaryTestGroup = test_case(
         },
 
         handleRequest : function(test) {
-            test.expect(6);
+            test.expect(11);
 
             var result = [
                 {
@@ -119,6 +119,12 @@ exports.primaryTestGroup = test_case(
                     test.equal(setting.key.application, 'application');
                     test.equal(setting.key.scope, 'scope');
                     test.equal(setting.key.setting, 'setting');
+
+                    test.ok(setting.value != null, 'The setting should have a value');
+                    test.ok(setting.temporalization != null, 'The setting should have a temporalization object.');
+                    test.ok(setting.temporalization.eff_date != null, 'The setting should have an effective date.');
+                    test.ok(setting.temporalization.end_date != null, 'The setting should have an end date.');
+                    test.ok(setting.temporalization.cache_lifetime != null, 'The setting should have a cache lifetime.');
 
                 },
                 end : function() {
