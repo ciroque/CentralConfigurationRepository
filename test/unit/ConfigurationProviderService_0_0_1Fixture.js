@@ -7,12 +7,14 @@
 var nodeunit_module = require('nodeunit');
 var test_case = nodeunit_module.testCase;
 
+var settings_module = require('n-app-conf');
 var cps_0_0_1_module = require('../../lib/service/endpoint_implementation_modules/ConfigurationProviderService_0_0_1');
+
+var settings = new settings_module.Settings('./assets/test_settings.json');
 
 exports.primaryTestGroup = test_case(
     {
         getVersion : function(test) {
-
             test.expect(1);
 
             var mock_data_store = {
@@ -35,7 +37,8 @@ exports.primaryTestGroup = test_case(
             var cps_0_0_1 = new cps_0_0_1_module.ConfigurationProviderService_0_0_1(
                 mock_data_store,
                 mock_log_writer,
-                mock_access_stats_tracker
+                mock_access_stats_tracker,
+                settings
             );
 
             var version = cps_0_0_1.getVersion();
@@ -88,7 +91,8 @@ exports.primaryTestGroup = test_case(
             var cps_0_0_1 = new cps_0_0_1_module.ConfigurationProviderService_0_0_1(
                 mock_data_store,
                 mock_log_writer,
-                mock_access_stats_tracker
+                mock_access_stats_tracker,
+                settings
             );
 
             var mock_req = {

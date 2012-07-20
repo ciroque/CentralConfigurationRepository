@@ -13,6 +13,9 @@
             "audit_collection" : "auditing"
         }
     },
+    "defaults" : {
+        "default_environment" : "default"
+    },
     "logging" : {
         "debug_log_level" : 7,
         "log_level" : 6

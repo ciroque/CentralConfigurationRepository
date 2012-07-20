@@ -171,3 +171,33 @@ exports.accessStatisticsTrackerSettings = test_case(
         }
     }
 );
+
+exports.defaultSettings = test_case(
+    {
+        settingsFromFile : function(test) {
+            test.expect(1);
+
+            var ccr_settings = new ccr_settings_module.Settings(CONFIGURATION_TEST_FILENAME);
+
+            test.equal(ccr_settings.defaults.default_environment, 'default');
+
+            test.done();
+        },
+
+        settingsFromEnvironment : function(test) {
+            test.expect(1);
+
+            var default_environment = 'default_environment_override';
+
+            process.env['defaults__default_environment'] = default_environment;
+
+            var ccr_settings = new ccr_settings_module.Settings(CONFIGURATION_TEST_FILENAME);
+
+            test.equal(ccr_settings.defaults.default_environment, default_environment);
+
+            test.done();
+
+            delete process.env['defaults__default_environment'];
+        }
+    }
+);
