@@ -34,7 +34,7 @@ frisby_module.create('Tests that calling the endpoint with an environment and ap
     .get(
         settings.service.protocol + '://' +
         settings.service.hostname + ':' +
-        settings.service.port + '/setting/default/default')
+        settings.service.port + '/setting/default/application2')
     .expectStatus(200)
     .expectHeaderContains('x-api-version', '0.0.1')
     .expectBodyContains('key')
@@ -45,7 +45,7 @@ frisby_module.create('Tests that calling the endpoint with an environment, appli
     .get(
         settings.service.protocol + '://' +
         settings.service.hostname + ':' +
-        settings.service.port + '/setting/default/default/default')
+        settings.service.port + '/setting/default/application2/scope')
     .expectStatus(200)
     .expectHeaderContains('x-api-version', '0.0.1')
     .expectBodyContains('key')
@@ -56,7 +56,7 @@ frisby_module.create('Tests that calling the endpoint with an environment, appli
     .get(
         settings.service.protocol + '://' +
         settings.service.hostname + ':' +
-        settings.service.port + '/setting/default/default/default/default')
+        settings.service.port + '/setting/default/application2/scope/setting')
     .expectStatus(200)
     .expectHeaderContains('x-api-version', '0.0.1')
     .expectBodyContains('key')
@@ -65,6 +65,26 @@ frisby_module.create('Tests that calling the endpoint with an environment, appli
     .expectBodyContains('scope')
     .expectBodyContains('setting')
     .expectBodyContains('value')
+    .expectBodyContains('temporalization')
+    .expectBodyContains('eff_date')
+    .expectBodyContains('end_date')
+    .expectBodyContains('cache_lifetime')
+    .toss();
+
+frisby_module.create('The specified environment is returned when a default environment exists')
+    .get(
+        settings.service.protocol + '://' +
+        settings.service.hostname + ':' +
+        settings.service.port + '/setting/prod/application2/scope/setting')
+    .expectStatus(200)
+    .expectHeaderContains('x-api-version', '0.0.1')
+    .expectBodyContains('key')
+    .expectBodyContains('environment')
+    .expectBodyContains('prod')
+    .expectBodyContains('application2')
+    .expectBodyContains('scope')
+    .expectBodyContains('setting')
+    .expectBodyContains('prod_setting')
     .expectBodyContains('temporalization')
     .expectBodyContains('eff_date')
     .expectBodyContains('end_date')

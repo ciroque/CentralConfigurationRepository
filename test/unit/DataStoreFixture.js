@@ -255,7 +255,7 @@ exports.retrieveSettingScheduleTests = test_case(
 
                     test.ok(err == null, err);
 
-                    test.equal(settings.length, 2);
+                    test.equal(settings.length, 3);
 
                     self.log_writer.writeDebug(JSON.stringify(settings));
 

@@ -1,11 +1,12 @@
 #!/bin/bash
 
-PATH=$PATH:../../node_modules/jasmine-node/bin
-
 clear
 
-pushd ./api
+PATH=$PATH:../../node_modules/jasmine-node/bin
 
+DIR="$( cd "$( dirname "$0" )" && pwd )"
+
+pushd ./api
 
 writeToConsole() {
     echo
@@ -14,8 +15,32 @@ writeToConsole() {
     echo ================================================================================
 }
 
-writeToConsole 'Running tests via jasmine and Frisby...'
+writeToConsole 'Ensuring dependent packages are installed...'
+npm install -d
 
+writeToConsole 'Setting environment variable overrides.'
+export data_store__database_name=ccr_tests
+export service__port=33131
+export data_store__database_name=ccr_tests
+export logging__log_level=7
+
+writeToConsole 'Starting CCR for tests.'
+pushd ../../lib/service
+forever start ./run_central_configuration_repository_service.js
+forever list
+popd
+
+writeToConsole 'Preparing data store with test documents...'
+mongoimport -d ccr_tests -c settings --drop --file ../unit/assets/test_settings.dat
+
+writeToConsole 'Running tests via jasmine and Frisby...'
 jasmine-node .
 
+writeToConsole 'Stopping CCR...'
+forever stop 0
+
 popd
+
+export data_store__database_name=
+export service__port=
+export data_store__database_name=

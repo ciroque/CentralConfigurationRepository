@@ -8,6 +8,7 @@
     "dependencies": {
         "async" : "0.1.22"
         , "caterpillar": "1.1.1"
+        , "forever" : ">=0.10.0"
         , "frisby" : "0.4.6"
         , "jasmine-node" : "1.0.26"
         , "memcached" : ">=0.0.10"
