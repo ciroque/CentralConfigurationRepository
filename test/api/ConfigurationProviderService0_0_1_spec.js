@@ -90,3 +90,23 @@ frisby_module.create('The specified environment is returned when a default envir
     .expectBodyContains('end_date')
     .expectBodyContains('cache_lifetime')
     .toss();
+
+frisby_module.create('Default environment is returned when requested environment does not exist')
+    .get(
+        settings.service.protocol + '://' +
+        settings.service.hostname + ':' +
+        settings.service.port + '/setting/prod/application4/scope/setting')
+    .expectStatus(200)
+    .expectHeaderContains('x-api-version', '0.0.1')
+    .expectBodyContains('key')
+    .expectBodyContains('environment')
+    .expectBodyContains('default')
+    .expectBodyContains('application4')
+    .expectBodyContains('scope')
+    .expectBodyContains('setting')
+    .expectBodyContains('default_setting')
+    .expectBodyContains('temporalization')
+    .expectBodyContains('eff_date')
+    .expectBodyContains('end_date')
+    .expectBodyContains('cache_lifetime')
+    .toss();
