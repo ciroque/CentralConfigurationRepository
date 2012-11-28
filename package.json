@@ -1,9 +1,21 @@
 {
+    "author": {
+        "name" : "Steve Wagner",
+        "email": "ciroque@live.com"
+    },
+
     "name": "CentralConfigurationRepository",
+    "homepage" : "https://github.com/ciroque/CentralConfigurationRepository",
+    "description" : "A REST-ful service repository that stores application configuration settings in a centralized location.",
+
     "subdomain": "ciroque",
     "version": "0.0.1",
     "engines": {
-        "node": "0.6.x"
+        "node": ">=0.6.x"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:ciroque/CentralConfigurationRepository.git"
     },
     "dependencies": {
         "async" : "0.1.22"
