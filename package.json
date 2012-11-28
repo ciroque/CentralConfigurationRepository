@@ -7,14 +7,14 @@
     },
     "dependencies": {
         "async" : "0.1.22"
-        , "caterpillar": "1.1.1"
-        , "frisby" : "0.4.6"
+        , "caterpillar": ">=1.1.3"
+        , "frisby" : "0.6.2"
         , "jasmine-node" : "1.0.26"
-        , "memcached" : ">=0.0.10"
-        , "mongodb" : "1.0.0"
+        , "memcached" : "0.1.5"
+        , "mongodb" : "1.2.0"
         , "n-app-conf" : ">=0.0.2"
         , "nodeunit" : "0.7.4"
         , "node.extend" : "1.0.0"
-        , "restify" : "git://github.com/mcavage/node-restify.git#dec58eb365577bb928e5402997ebeca620736b95"
+        , "restify" : "1.4.4"
     }
 }

@@ -15,14 +15,11 @@ writeToConsole() {
     echo ================================================================================
 }
 
-writeToConsole 'Ensuring dependent packages are installed...'
-npm install -d
-
 writeToConsole 'Setting environment variable overrides.'
 export data_store__database_name=ccr_tests
 export service__port=33131
 export data_store__database_name=ccr_tests
-export logging__log_level=7
+export logging__log_level   =7
 
 writeToConsole 'Starting CCR for tests.'
 pushd ../../lib/service

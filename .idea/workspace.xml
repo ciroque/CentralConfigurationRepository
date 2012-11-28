@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f00f0f7-0337-41a3-a4b2-031b3c120377" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/unit/ConfigurationManagmentService_0_0_1Fixture.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/CentralConfigurationRepository.iml" afterPath="$PROJECT_DIR$/.idea/CentralConfigurationRepository.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/reset_dependencies.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/unit/DataStoreFixture.js" afterPath="$PROJECT_DIR$/test/unit/DataStoreFixture.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/run_api_tests.sh" afterPath="$PROJECT_DIR$/test/run_api_tests.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/unit/ConfigurationProviderService_0_0_1Fixture.js" afterPath="$PROJECT_DIR$/test/unit/ConfigurationProviderService_0_0_1Fixture.js" />
     </list>
     <ignored path="CentralConfigurationRepository.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,22 +63,13 @@
     <favorites_list name="CentralConfigurationRepository" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.45850998">
       <split-first>
         <leaf>
-          <file leaf-file-name="ConfigurationManagmentService_0_0_1Fixture.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test/unit/ConfigurationManagmentService_0_0_1Fixture.js">
+          <file leaf-file-name="ConfigurationProviderService_0_0_1.js" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationProviderService_0_0_1.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="96" column="0" selection-start="2910" selection-end="2910" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ConfigurationManagementService_0_0_1.js" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationManagementService_0_0_1.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="86" column="77" selection-start="2596" selection-end="2596" vertical-scroll-proportion="0.5775128">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.05033557">
                   <folding />
                 </state>
               </provider>
@@ -88,28 +79,46 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="ConfigurationProviderService_0_0_1Fixture.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test/unit/ConfigurationProviderService_0_0_1Fixture.js">
+          <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="107" column="46" selection-start="3236" selection-end="3236" vertical-scroll-proportion="0.0">
+                <state line="19" column="70" selection-start="496" selection-end="496" vertical-scroll-proportion="-11.4">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="DataStoreFixture.js" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/test/unit/DataStoreFixture.js">
+          <file leaf-file-name="DataStore.js" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/lib/service/DataStore.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="49" column="32" selection-start="1560" selection-end="1560" vertical-scroll-proportion="0.33333334">
+                <state line="196" column="23" selection-start="5713" selection-end="5713" vertical-scroll-proportion="0.4541387">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ConfigurationManagementService_0_0_1_spec.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test/api/ConfigurationManagementService_0_0_1_spec.js">
+          <file leaf-file-name="run_unit_tests.sh" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/run_unit_tests.sh">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="21" column="41" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0">
+                <state line="18" column="0" selection-start="313" selection-end="313" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="reset_dependencies.sh" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/reset_dependencies.sh">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="14" column="0" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="run_api_tests.sh" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/run_api_tests.sh">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="16" column="0" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -130,15 +139,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/test/api/ConfigurationProviderService_spec.js" />
-        <option value="$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationManageService_0_0_1.js" />
-        <option value="$PROJECT_DIR$/lib/service/ParameterValidator.js" />
-        <option value="$PROJECT_DIR$/test/unit/ParameterValidatorFixture.js" />
         <option value="$PROJECT_DIR$/lib/service/RestServer.js" />
-        <option value="$PROJECT_DIR$/lib/service/DataStore.js" />
         <option value="$PROJECT_DIR$/lib/service/settings.json" />
         <option value="$PROJECT_DIR$/test/package.json" />
-        <option value="$PROJECT_DIR$/test/run_api_tests.sh" />
         <option value="$PROJECT_DIR$/test/api/ConfigurationManagementService_0_0_1_spec.js" />
         <option value="$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationProviderService_0_0_1.js" />
         <option value="$PROJECT_DIR$/test/unit/assets/test_settings.dat" />
@@ -146,6 +149,12 @@
         <option value="$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationManagementService_0_0_1.js" />
         <option value="$PROJECT_DIR$/test/unit/DataStoreFixture.js" />
         <option value="$PROJECT_DIR$/test/unit/ConfigurationManagmentService_0_0_1Fixture.js" />
+        <option value="$PROJECT_DIR$/test/unit/ConfigurationProviderService_0_0_1Fixture.js" />
+        <option value="$PROJECT_DIR$/test/reset_dependencies.sh" />
+        <option value="$PROJECT_DIR$/test/run_api_tests.sh" />
+        <option value="$PROJECT_DIR$/test/run_unit_tests.sh" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/lib/service/DataStore.js" />
       </list>
     </option>
   </component>
@@ -206,9 +215,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -248,42 +254,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CentralConfigurationRepository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CentralConfigurationRepository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="unit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CentralConfigurationRepository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CentralConfigurationRepository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -353,6 +323,20 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="endpoint_implementation_modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CentralConfigurationRepository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CentralConfigurationRepository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -503,7 +487,15 @@
       <created>1343755275991</created>
       <updated>1343755275991</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="adding api test to confirm default environment is returned when requested environment does not exist and default is present.">
+      <created>1353812703007</created>
+      <updated>1353812703007</updated>
+    </task>
+    <task id="LOCAL-00023" summary="adding journaling flag to ctor as requested by new mongodb driver. details at: http://docs.mongodb.org/manual/core/write-operations/#write-concern">
+      <created>1354139497810</created>
+      <updated>1354139497810</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -528,31 +520,31 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-4" width="1922" height="1084" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22400858" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Kahlua" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Kahlua" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290461" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12913553" sideWeight="0.6709539" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11805555" sideWeight="0.6709539" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22400858" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39978564" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="JsTestDriver Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
@@ -594,7 +586,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding api test to confirm default environment is returned when requested environment does not exist and default is present." />
+    <option name="LAST_COMMIT_MESSAGE" value="adding journaling flag to ctor as requested by new mongodb driver. details at: http://docs.mongodb.org/manual/core/write-operations/#write-concern" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -629,101 +621,135 @@
     <MESSAGE value="implementing retrieveSettingSchedule in DataStore and GET handler for ConfigurationManagementService_0_0_1" />
     <MESSAGE value="adding api tests for ConfigurationManagementService&#10;correcting logic behind query for setting where environment override exists for default setting&#10;" />
     <MESSAGE value="adding api test to confirm default environment is returned when requested environment does not exist and default is present." />
+    <MESSAGE value="adding journaling flag to ctor as requested by new mongodb driver. details at: http://docs.mongodb.org/manual/core/write-operations/#write-concern" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/lib/service/DataStore.js</url>
+          <line>193</line>
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/service/run_central_configuration_repository_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="16" selection-start="56" selection-end="56" vertical-scroll-proportion="0.06615215" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/assets/test_settings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="18" selection-start="499" selection-end="508" vertical-scroll-proportion="0.31422272" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/api/ConfigurationProviderService0_0_1_spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="51" selection-start="2327" selection-end="2327" vertical-scroll-proportion="0.9922823" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/assets/test_settings.dat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="216" selection-start="1802" selection-end="1802" vertical-scroll-proportion="0.10067114" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationProviderService_0_0_1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="167" column="0" selection-start="6105" selection-end="6105" vertical-scroll-proportion="0.96644294" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/service/ParameterValidator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="39" selection-start="651" selection-end="651" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/service/DataStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="293" column="6" selection-start="8507" selection-end="8507" vertical-scroll-proportion="0.24641834" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/LogWriterFixture.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-2.2249174" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/unit/ConfigurationManagmentService_0_0_1Fixture.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="0" selection-start="2910" selection-end="2910" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/ConfigurationProviderService_0_0_1Fixture.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="46" selection-start="3236" selection-end="3236" vertical-scroll-proportion="0.0">
+        <state line="96" column="0" selection-start="2910" selection-end="2910" vertical-scroll-proportion="0.22271223">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/lib/service/DataStoreFactory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/run_unit_tests.sh">
+    <entry file="file://$PROJECT_DIR$/test/api/ConfigurationProviderService0_0_1_spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="49" selection-start="517" selection-end="517" vertical-scroll-proportion="0.42325056">
+        <state line="60" column="51" selection-start="2327" selection-end="2327" vertical-scroll-proportion="0.057331864">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/ConfigurationProviderService_0_0_1Fixture.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="144" column="12" selection-start="4732" selection-end="4732" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#467#1382#0" expanded="false" />
+            <element signature="e#1481#2106#0" expanded="false" />
+            <element signature="e#2525#2669#0" expanded="false" />
+            <element signature="e#2934#3165#0" expanded="false" />
+            <element signature="e#3195#4367#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationProviderService_0_0_1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.05033557">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/service/run_central_configuration_repository_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="55" selection-start="206" selection-end="206" vertical-scroll-proportion="0.20316027">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/service/LogWriter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="9" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/service/WebService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="9" selection-start="447" selection-end="447" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/AccessStatisticsTrackerFixture.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="83" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/service/AccessStatisticsTracker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="9" selection-start="146" selection-end="146" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/run_api_tests.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="25" selection-start="558" selection-end="558" vertical-scroll-proportion="0.3969129">
+        <state line="16" column="0" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationManagementService_0_0_1.js">
+    <entry file="file://$PROJECT_DIR$/test/run_unit_tests.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="77" selection-start="2596" selection-end="2596" vertical-scroll-proportion="0.5775128">
+        <state line="18" column="0" selection-start="313" selection-end="313" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/api/ConfigurationManagementService_0_0_1_spec.js">
+    <entry file="file://$PROJECT_DIR$/lib/service/settings.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="41" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/DataStoreFixture.js">
+    <entry file="file://$PROJECT_DIR$/test/reset_dependencies.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="32" selection-start="1560" selection-end="1560" vertical-scroll-proportion="0.33333334">
+        <state line="14" column="0" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="70" selection-start="496" selection-end="496" vertical-scroll-proportion="-11.4">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/service/DataStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="196" column="23" selection-start="5713" selection-end="5713" vertical-scroll-proportion="0.4541387">
           <folding />
         </state>
       </provider>
