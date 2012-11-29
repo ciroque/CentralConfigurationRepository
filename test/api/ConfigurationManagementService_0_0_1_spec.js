@@ -49,7 +49,7 @@ frisby_module.create('List settings')
     .expectBodyContains('setting')
     .toss();
 
-frisby_module.create('List settings')
+frisby_module.create('Retrieve value')
     .get(settings.service.protocol + '://' +
         settings.service.hostname + ':' +
         settings.service.port + '/schedule/prod/application2/scope/setting')
@@ -57,4 +57,28 @@ frisby_module.create('List settings')
     .expectHeaderContains('x-api-version', '0.0.1')
     .expectBodyContains('key')
     .expectBodyContains('value')
+    .toss();
+
+frisby_module.create('Application not found')
+    .get(settings.service.protocol + '://' +
+    settings.service.hostname + ':' +
+    settings.service.port + '/schedule/prod/blase')
+    .expectStatus(404)
+    .expectHeaderContains('x-api-version', '0.0.1')
+    .toss();
+
+frisby_module.create('Scope not found')
+    .get(settings.service.protocol + '://' +
+    settings.service.hostname + ':' +
+    settings.service.port + '/schedule/prod/application2/blase')
+    .expectStatus(404)
+    .expectHeaderContains('x-api-version', '0.0.1')
+    .toss();
+
+frisby_module.create('Setting not found')
+    .get(settings.service.protocol + '://' +
+    settings.service.hostname + ':' +
+    settings.service.port + '/schedule/prod/application2/scope/blase')
+    .expectStatus(404)
+    .expectHeaderContains('x-api-version', '0.0.1')
     .toss();

@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f00f0f7-0337-41a3-a4b2-031b3c120377" name="Default" comment="">
+    <list default="true" id="9f00f0f7-0337-41a3-a4b2-031b3c120377" name="Default" comment="fixing bug in AccessStatisticsTracker. Connection to memcached server was potentially closed before the call to increment was able to be called.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/service/AccessStatisticsTracker.js" afterPath="$PROJECT_DIR$/lib/service/AccessStatisticsTracker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/run_unit_tests.sh" afterPath="$PROJECT_DIR$/test/run_unit_tests.sh" />
-    </list>
-    <list id="ac987eed-e006-49d4-b2d1-bd5a0db3aa86" name="Bug (Issue #1)" comment="Bug (Issue #1)">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/unit/ConfigurationProviderService_0_0_1Fixture.js" afterPath="$PROJECT_DIR$/test/unit/ConfigurationProviderService_0_0_1Fixture.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/api/ConfigurationManagementService_0_0_1_spec.js" afterPath="$PROJECT_DIR$/test/api/ConfigurationManagementService_0_0_1_spec.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/api/ConfigurationProviderService0_0_1_spec.js" afterPath="$PROJECT_DIR$/test/api/ConfigurationProviderService0_0_1_spec.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/run_api_tests.sh" afterPath="$PROJECT_DIR$/test/run_api_tests.sh" />
     </list>
     <ignored path="CentralConfigurationRepository.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,99 +62,26 @@
     <favorites_list name="CentralConfigurationRepository" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.41308302">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="ConfigurationProviderService_0_0_1.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationProviderService_0_0_1.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="24" column="70" selection-start="898" selection-end="898" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="DataStore.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/lib/service/DataStore.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="263" column="92" selection-start="7512" selection-end="7561" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ConfigurationManagementService_0_0_1.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationManagementService_0_0_1.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="AccessStatisticsTracker.js" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/lib/service/AccessStatisticsTracker.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="79" column="0" selection-start="2171" selection-end="2171" vertical-scroll-proportion="0.67812145">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="ConfigurationProviderService_0_0_1Fixture.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test/unit/ConfigurationProviderService_0_0_1Fixture.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="107" column="81" selection-start="3236" selection-end="3236" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="run_unit_tests.sh" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test/run_unit_tests.sh">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="17" column="97" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ConfigurationManagmentService_0_0_1Fixture.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test/unit/ConfigurationManagmentService_0_0_1Fixture.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="12" column="79" selection-start="387" selection-end="387" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="DataStoreFixture.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test/unit/DataStoreFixture.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="AccessStatisticsTrackerFixture.js" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/test/unit/AccessStatisticsTrackerFixture.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="33" column="0" selection-start="1116" selection-end="1116" vertical-scroll-proportion="0.13745704">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="ConfigurationManagementService_0_0_1_spec.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/api/ConfigurationManagementService_0_0_1_spec.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="68" column="0" selection-start="1938" selection-end="2208" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConfigurationProviderService0_0_1_spec.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/api/ConfigurationProviderService0_0_1_spec.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="136" column="0" selection-start="5073" selection-end="5073" vertical-scroll-proportion="0.9007718">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -170,21 +95,21 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/test/package.json" />
-        <option value="$PROJECT_DIR$/test/api/ConfigurationManagementService_0_0_1_spec.js" />
-        <option value="$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationProviderService_0_0_1.js" />
         <option value="$PROJECT_DIR$/test/unit/assets/test_settings.dat" />
-        <option value="$PROJECT_DIR$/test/api/ConfigurationProviderService0_0_1_spec.js" />
         <option value="$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationManagementService_0_0_1.js" />
         <option value="$PROJECT_DIR$/test/unit/DataStoreFixture.js" />
         <option value="$PROJECT_DIR$/test/unit/ConfigurationManagmentService_0_0_1Fixture.js" />
-        <option value="$PROJECT_DIR$/test/unit/ConfigurationProviderService_0_0_1Fixture.js" />
         <option value="$PROJECT_DIR$/test/reset_dependencies.sh" />
-        <option value="$PROJECT_DIR$/test/run_api_tests.sh" />
         <option value="$PROJECT_DIR$/lib/service/DataStore.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/test/run_unit_tests.sh" />
         <option value="$PROJECT_DIR$/lib/service/AccessStatisticsTracker.js" />
         <option value="$PROJECT_DIR$/test/unit/AccessStatisticsTrackerFixture.js" />
+        <option value="$PROJECT_DIR$/test/unit/ConfigurationProviderService_0_0_1Fixture.js" />
+        <option value="$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationProviderService_0_0_1.js" />
+        <option value="$PROJECT_DIR$/test/run_api_tests.sh" />
+        <option value="$PROJECT_DIR$/test/api/ConfigurationManagementService_0_0_1_spec.js" />
+        <option value="$PROJECT_DIR$/test/api/ConfigurationProviderService0_0_1_spec.js" />
       </list>
     </option>
   </component>
@@ -315,7 +240,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="unit" />
+              <option name="myItemId" value="api" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -464,7 +389,6 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="9f00f0f7-0337-41a3-a4b2-031b3c120377" name="Default" comment="" />
-      <changelist id="ac987eed-e006-49d4-b2d1-bd5a0db3aa86" name="Bug (Issue #1)" comment="" />
       <created>1341519523124</created>
       <updated>1341519523124</updated>
     </task>
@@ -568,7 +492,15 @@
       <created>1354141925071</created>
       <updated>1354141925071</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="fixing bug in AccessStatisticsTracker. Connection to memcached server was potentially closed before the call to increment was able to be called.">
+      <created>1354147827329</created>
+      <updated>1354147827329</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Bug (Issue #1) =&gt; yeah. this was a bug. corrected and the expected behavior verified in the new test coverage.">
+      <created>1354156371258</created>
+      <updated>1354156371258</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -612,7 +544,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11805555" sideWeight="0.6709539" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1832265" sideWeight="0.6709539" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -659,7 +591,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing bug in AccessStatisticsTracker. Connection to memcached server was potentially closed before the call to increment was able to be called." />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug (Issue #1) =&gt; yeah. this was a bug. corrected and the expected behavior verified in the new test coverage." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -672,7 +604,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="moving more pieces into place.&#10;&#10;- tests for settings (rest &amp; logging)&#10;- tests and implementation for RestServer" />
     <MESSAGE value="moving DatastoreFactory into place." />
     <MESSAGE value="- moving DatastoreFactory into place.&#10;- fleshing out WebService&#10;- moving all settings into the global Settings class" />
     <MESSAGE value="Service starts and runs" />
@@ -697,6 +628,7 @@
     <MESSAGE value="updating dependencies" />
     <MESSAGE value="updating package definition." />
     <MESSAGE value="fixing bug in AccessStatisticsTracker. Connection to memcached server was potentially closed before the call to increment was able to be called." />
+    <MESSAGE value="Bug (Issue #1) =&gt; yeah. this was a bug. corrected and the expected behavior verified in the new test coverage." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -709,59 +641,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/service/LogWriter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="9" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/service/WebService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="9" selection-start="447" selection-end="447" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/service/settings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/run_api_tests.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/reset_dependencies.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="382" selection-end="382" vertical-scroll-proportion="0.23153253">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/restify/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="69" selection-start="366" selection-end="366" vertical-scroll-proportion="-0.54362416">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationManagementService_0_0_1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/ConfigurationManagmentService_0_0_1Fixture.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="79" selection-start="387" selection-end="387" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/DataStoreFixture.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -773,27 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/run_unit_tests.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="97" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationProviderService_0_0_1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="70" selection-start="898" selection-end="898" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/ConfigurationProviderService_0_0_1Fixture.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="81" selection-start="3236" selection-end="3236" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="6" selection-start="573" selection-end="573" vertical-scroll-proportion="0.46632123">
@@ -801,16 +662,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/service/AccessStatisticsTracker.js">
+    <entry file="file://$PROJECT_DIR$/test/run_unit_tests.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="0" selection-start="2171" selection-end="2171" vertical-scroll-proportion="0.67812145">
+        <state line="17" column="97" selection-start="310" selection-end="310" vertical-scroll-proportion="0.2878104">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/unit/AccessStatisticsTrackerFixture.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="1116" selection-end="1116" vertical-scroll-proportion="0.13745704">
+        <state line="26" column="52" selection-start="856" selection-end="856" vertical-scroll-proportion="-0.18900344">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/assets/test_settings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="19" selection-start="702" selection-end="702" vertical-scroll-proportion="0.48109967">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/DataStoreFixture.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.11356119">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationManagementService_0_0_1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.5257271">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/service/settings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/service/AccessStatisticsTracker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="0" selection-start="2171" selection-end="2171" vertical-scroll-proportion="1.3573883">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/ConfigurationManagmentService_0_0_1Fixture.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="79" selection-start="387" selection-end="387" vertical-scroll-proportion="-0.30201343">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationProviderService_0_0_1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="140" column="79" selection-start="5360" selection-end="5360" vertical-scroll-proportion="2.2080536">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/ConfigurationProviderService_0_0_1Fixture.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="306" column="0" selection-start="10259" selection-end="10259" vertical-scroll-proportion="0.4707828">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/run_api_tests.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="25" selection-start="480" selection-end="480" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/api/ConfigurationManagementService_0_0_1_spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="0" selection-start="1938" selection-end="2208" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/api/ConfigurationProviderService0_0_1_spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="136" column="0" selection-start="5073" selection-end="5073" vertical-scroll-proportion="0.9007718">
           <folding />
         </state>
       </provider>

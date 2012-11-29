@@ -110,3 +110,27 @@ frisby_module.create('Default environment is returned when requested environment
     .expectBodyContains('end_date')
     .expectBodyContains('cache_lifetime')
     .toss();
+
+frisby_module.create('Application not found')
+    .get(settings.service.protocol + '://' +
+    settings.service.hostname + ':' +
+    settings.service.port + '/setting/prod/blase')
+    .expectStatus(404)
+    .expectHeaderContains('x-api-version', '0.0.1')
+    .toss();
+
+frisby_module.create('Scope not found')
+    .get(settings.service.protocol + '://' +
+    settings.service.hostname + ':' +
+    settings.service.port + '/setting/prod/application2/blase')
+    .expectStatus(404)
+    .expectHeaderContains('x-api-version', '0.0.1')
+    .toss();
+
+frisby_module.create('Setting not found')
+    .get(settings.service.protocol + '://' +
+    settings.service.hostname + ':' +
+    settings.service.port + '/setting/prod/application2/scope/blase')
+    .expectStatus(404)
+    .expectHeaderContains('x-api-version', '0.0.1')
+    .toss();
