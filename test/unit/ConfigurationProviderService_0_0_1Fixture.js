@@ -12,6 +12,15 @@ var cps_0_0_1_module = require('../../lib/service/endpoint_implementation_module
 
 var settings = new settings_module.Settings('./assets/test_settings.json');
 
+
+var mock_log_writer = {
+    writeDebug : function(msg) {
+        console.log(msg);
+    },
+    writeError : function() {
+    }
+};
+
 exports.primaryTestGroup = test_case(
     {
         getVersion : function(test) {
@@ -21,11 +30,6 @@ exports.primaryTestGroup = test_case(
                 retrieveActiveSetting : function(env, app, scope, setting, handler) {
                     handler(null);
                 }
-            };
-
-            var mock_log_writer = {
-                writeDebug : function() {},
-                writeError : function() {}
             };
 
             var mock_access_stats_tracker = {
@@ -98,6 +102,200 @@ exports.primaryTestGroup = test_case(
             var mock_req = {
                 params : {
                     environment : 'default',
+                    application : 'application',
+                    scope : 'scope',
+                    setting : 'setting'
+                }
+            };
+
+            var mock_res = {
+                send : function(body) {
+
+                    test.ok(body != null);
+
+                    var body_obj = eval(body);
+
+                    test.equal(body_obj.length, 1);
+
+                    var setting = body_obj[0];
+
+                    test.equal(setting.key.environment, 'default');
+                    test.equal(setting.key.application, 'application');
+                    test.equal(setting.key.scope, 'scope');
+                    test.equal(setting.key.setting, 'setting');
+
+                    test.ok(setting.value != null, 'The setting should have a value');
+                    test.ok(setting.temporalization != null, 'The setting should have a temporalization object.');
+                    test.ok(setting.temporalization.eff_date != null, 'The setting should have an effective date.');
+                    test.ok(setting.temporalization.end_date != null, 'The setting should have an end date.');
+                    test.ok(setting.temporalization.cache_lifetime != null, 'The setting should have a cache lifetime.');
+
+                },
+                end : function() {
+                    test.done();
+                }
+            };
+
+            cps_0_0_1.handleRequest(mock_req, mock_res);
+        },
+
+        requestedSettingReturnedWhenDefaultExists : function(test) {
+            test.expect(11);
+
+            var result = [
+                {
+                    "_id": "4ff3371ca23a0ea2fecb8b87",
+                    "key": {
+                        "environment": "default",
+                        "application": "application",
+                        "scope": "scope",
+                        "setting": "setting"
+                    },
+                    "value": "true",
+                    "temporalization": {
+                        "cache_lifetime": "600",
+                        "eff_date": "2010-01-03T08:00:00.000Z",
+                        "end_date": "9999-12-31T08:00:00.000Z"
+                    }
+                },
+
+                {
+                    "_id": "4ff3371ca23a0ea2fecb8b88",
+                    "key": {
+                        "environment": "dev",
+                        "application": "application",
+                        "scope": "scope",
+                        "setting": "setting"
+                    },
+                    "value": "true",
+                    "temporalization": {
+                        "cache_lifetime": "1200",
+                        "eff_date": "2010-01-03T08:00:00.000Z",
+                        "end_date": "9999-12-31T08:00:00.000Z"
+                    }
+                }
+            ];
+
+            var mock_data_store = {
+                retrieveActiveSetting : function(env, app, scope, setting, handler) {
+                    handler(null, result);
+                }
+            }
+
+
+            var mock_access_stats_tracker = {
+                recordQuery : function(env, app, scope, setting, handler) {
+                    handler(null);
+                }
+            };
+
+            var cps_0_0_1 = new cps_0_0_1_module.ConfigurationProviderService_0_0_1(
+                mock_data_store,
+                mock_log_writer,
+                mock_access_stats_tracker,
+                settings
+            );
+
+            var mock_req = {
+                params : {
+                    environment : 'dev',
+                    application : 'application',
+                    scope : 'scope',
+                    setting : 'setting'
+                }
+            };
+
+            var mock_res = {
+                send : function(body) {
+
+                    test.ok(body != null);
+
+                    var body_obj = eval(body);
+
+                    test.equal(body_obj.length, 1);
+
+                    var setting = body_obj[0];
+
+                    test.equal(setting.key.environment, 'dev');
+                    test.equal(setting.key.application, 'application');
+                    test.equal(setting.key.scope, 'scope');
+                    test.equal(setting.key.setting, 'setting');
+
+                    test.ok(setting.value != null, 'The setting should have a value');
+                    test.ok(setting.temporalization != null, 'The setting should have a temporalization object.');
+                    test.ok(setting.temporalization.eff_date != null, 'The setting should have an effective date.');
+                    test.ok(setting.temporalization.end_date != null, 'The setting should have an end date.');
+                    test.ok(setting.temporalization.cache_lifetime != null, 'The setting should have a cache lifetime.');
+
+                },
+                end : function() {
+                    test.done();
+                }
+            };
+
+            cps_0_0_1.handleRequest(mock_req, mock_res);
+        },
+
+        defaultSettingReturnedWhenRequestDoesNotExists : function(test) {
+            test.expect(11);
+
+            var result = [
+                {
+                    "_id": "4ff3371ca23a0ea2fecb8b87",
+                    "key": {
+                        "environment": "default",
+                        "application": "application",
+                        "scope": "scope",
+                        "setting": "setting"
+                    },
+                    "value": "true",
+                    "temporalization": {
+                        "cache_lifetime": "600",
+                        "eff_date": "2010-01-03T08:00:00.000Z",
+                        "end_date": "9999-12-31T08:00:00.000Z"
+                    }
+                },
+
+                {
+                    "_id": "4ff3371ca23a0ea2fecb8b88",
+                    "key": {
+                        "environment": "dev",
+                        "application": "application",
+                        "scope": "scope",
+                        "setting": "setting"
+                    },
+                    "value": "true",
+                    "temporalization": {
+                        "cache_lifetime": "1200",
+                        "eff_date": "2010-01-03T08:00:00.000Z",
+                        "end_date": "9999-12-31T08:00:00.000Z"
+                    }
+                }
+            ];
+
+            var mock_data_store = {
+                retrieveActiveSetting : function(env, app, scope, setting, handler) {
+                    handler(null, result);
+                }
+            }
+
+
+            var mock_access_stats_tracker = {
+                recordQuery : function(env, app, scope, setting, handler) {
+                    handler(null);
+                }
+            };
+
+            var cps_0_0_1 = new cps_0_0_1_module.ConfigurationProviderService_0_0_1(
+                mock_data_store,
+                mock_log_writer,
+                mock_access_stats_tracker,
+                settings
+            );
+
+            var mock_req = {
+                params : {
+                    environment : 'prod',
                     application : 'application',
                     scope : 'scope',
                     setting : 'setting'
