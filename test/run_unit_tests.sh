@@ -2,7 +2,7 @@
 
 clear
 
-export logging__log_level = 7
+export logging__log_level=7
 
 if [[ ("$#" == 1 && $1 =~ ^[0-9] ) ]]; then
     export CCR_LOG_WRITER_LOG_LEVEL=$1
