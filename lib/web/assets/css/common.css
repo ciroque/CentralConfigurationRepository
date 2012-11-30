@@ -1,0 +1,60 @@
+/*
+    common.css
+    global classes and style definitions
+*/
+
+body {
+    background-color: black;
+   background-image: url('../img/13131_steampunk.jpg');
+}
+
+.cfgList {
+    width : 100%;
+}
+
+.list_cont {
+    width : 120px;
+}
+
+.error-result {
+    background-color : silver;
+    color : red;
+}
+
+.success-result {
+    background-color : silver;
+    color : green;
+}
+
+.warn-result {
+    background-color : black;
+    color : gold;
+}
+
+.viewport {
+    width : 85%;
+}
+
+select {
+    border:none;
+    background-color: rgb(173,143,93);
+    /*color:#DBC8BB;*/
+    display: inline;
+    /*position : relative;*/
+    opacity: 1;
+    margin-top: 30px;
+    scrolling:auto;
+    width: 90%;
+}
+
+.lstcont {
+    background-color: rgba(173, 143, 93, 0.7);
+    border:ridge 2px silver;
+    border-radius: 40px;;
+    display: inline-block;
+    height: 200px;
+    opacity:1;
+    position:relative;
+    text-align: center;
+    width:24.5%;
+}
