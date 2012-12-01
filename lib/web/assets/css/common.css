@@ -4,8 +4,8 @@
 */
 
 body {
-    background-color: black;
-   background-image: url('../img/13131_steampunk.jpg');
+   background-color: white;
+    font-family: Arial, Verdana, sans-serif;
 }
 
 .cfgList {
@@ -37,7 +37,7 @@ body {
 
 select {
     border:none;
-    background-color: rgb(178,218,255);
+    background-color: rgb(196,196,196);
     display: inline-block;
     height:90%;
     opacity: 1;
@@ -46,8 +46,8 @@ select {
 }
 
 .lstcont {
-    background-color: rgba(173, 143, 93, 0.7);
-    border:ridge 2px silver;
+    background-color: rgba(196, 196, 196, 0.7);
+    border:ridge 1px rgb(242,242,242);
     border-radius: 40px;;
     display: inline-block;
     height: 200px;
@@ -70,4 +70,28 @@ select {
     padding-right: 2pt;
     text-align: right;
     width:10px;
+}
+
+.seccont {
+    background-color:rgba(242,242,242,0.6);
+    border:inset 1px #DBC8BB;
+    border-radius:40px;
+    margin-top: 4px;
+    padding:6px;
+}
+
+.sechdr {
+    border-radius: 20px;
+    color:rgb(172, 82, 82);
+    font-family: Arial, Consolas, sans-serif;
+    font-size: larger;
+    font-weight: bolder;
+    margin-top: 4px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 4px;
+    padding-top: 2px;
+    padding-right: 2px;
+    padding-left: 6px;
+    padding-bottom: 2px;
 }

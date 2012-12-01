@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f00f0f7-0337-41a3-a4b2-031b3c120377" name="Default" comment="">
+    <list default="true" id="9f00f0f7-0337-41a3-a4b2-031b3c120377" name="Default" comment="Tweaking the layout">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/web/admin/index.html" afterPath="$PROJECT_DIR$/lib/web/admin/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/web/assets/css/common.css" afterPath="$PROJECT_DIR$/lib/web/assets/css/common.css" />
@@ -67,7 +67,7 @@
           <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/lib/web/admin/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="48" column="21" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.87921846">
+                <state line="60" column="0" selection-start="1496" selection-end="1496" vertical-scroll-proportion="0.77916193">
                   <folding />
                 </state>
               </provider>
@@ -80,7 +80,7 @@
           <file leaf-file-name="common.css" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/lib/web/assets/css/common.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="60" column="4" selection-start="887" selection-end="887" vertical-scroll-proportion="0.55">
+                <state line="82" column="1" selection-start="1378" selection-end="1378" vertical-scroll-proportion="1.2976847">
                   <folding />
                 </state>
               </provider>
@@ -115,8 +115,8 @@
         <option value="$PROJECT_DIR$/test/run_api_tests.sh" />
         <option value="$PROJECT_DIR$/test/api/ConfigurationManagementService_0_0_1_spec.js" />
         <option value="$PROJECT_DIR$/test/api/ConfigurationProviderService0_0_1_spec.js" />
-        <option value="$PROJECT_DIR$/lib/web/assets/css/common.css" />
         <option value="$PROJECT_DIR$/lib/web/admin/index.html" />
+        <option value="$PROJECT_DIR$/lib/web/assets/css/common.css" />
       </list>
     </option>
   </component>
@@ -601,7 +601,11 @@
       <created>1354247513985</created>
       <updated>1354247513985</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Tweaking the layout">
+      <created>1354332712035</created>
+      <updated>1354332712035</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -640,7 +644,7 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Kahlua" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290461" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -816,14 +820,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/web/admin/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="21" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.87921846">
+        <state line="60" column="0" selection-start="1496" selection-end="1496" vertical-scroll-proportion="0.77916193">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/web/assets/css/common.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="4" selection-start="887" selection-end="887" vertical-scroll-proportion="0.55">
+        <state line="82" column="1" selection-start="1378" selection-end="1378" vertical-scroll-proportion="1.2976847">
           <folding />
         </state>
       </provider>
