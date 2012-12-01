@@ -37,14 +37,12 @@ body {
 
 select {
     border:none;
-    background-color: rgb(173,143,93);
-    /*color:#DBC8BB;*/
-    display: inline;
-    /*position : relative;*/
+    background-color: rgb(178,218,255);
+    display: inline-block;
+    height:90%;
     opacity: 1;
-    margin-top: 30px;
-    scrolling:auto;
-    width: 90%;
+    margin-top: 10px;
+    width: 80%;
 }
 
 .lstcont {
@@ -54,7 +52,22 @@ select {
     display: inline-block;
     height: 200px;
     opacity:1;
-    position:relative;
     text-align: center;
+    vertical-align: middle;
     width:24.5%;
+}
+
+.lstlbl {
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    border:solid 1px inherit;
+    color: rgb(58, 67, 108);
+    display: inline-block;
+    font-family: Arial,Consolas,sans-serif;
+    font-weight: bold;
+    height: 10%;
+    padding-right: 2pt;
+    text-align: right;
+    width:10px;
 }

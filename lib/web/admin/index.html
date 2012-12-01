@@ -8,38 +8,48 @@
 
     <script
             id="inc_jquery"
-            src="assets/js/jquery-1.8.3.min.js"
+            src="../assets/js/jquery-1.8.3.min.js"
             type="text/javascript"
             ></script>
 </head>
 <body>
 <div class="viewport">
 
-          <div
+    <div
             style="border:inset 4px #DBC8BB; border-radius:40px; background-color:rgba(219,200,187,0.6);">
 
-              <div class="lstcont">
+        <div class="lstcont">
 
-                <div style="opacity:1"><select size="8"><option>environments</option></select></div>
+            <label for="_envList" class="lstlbl">Environments</label>
+            <select id="_envList" size="8">
+                <option>environments</option>
+            </select>
 
-              </div>
 
-              <div class="lstcont">
+        </div>
 
-                  <select size="8"><option>applications</option></select>
-              </div>
+        <div class="lstcont">
+            <label for="_appList" class="lstlbl">Applications</label>
+            <select id="_appList" size="8">
+                <option>applications</option>
+            </select>
+        </div>
 
-              <div class="lstcont">
+        <div class="lstcont">
+            <label for="_scpList" class="lstlbl">Scopes</label>
+            <select id="_scpList" size="8">
+                <option>scopes</option>
+            </select>
+        </div>
 
-                  <select size="8"><option>scopes</option></select>
-              </div>
+        <div class="lstcont">
+            <label for="_setList" class="lstlbl">Settings</label>
+            <select id="_setList" size="8">
+                <option>settings</option>
+            </select>
+        </div>
 
-              <div class="lstcont">
-
-                  <select size="8"><option>settings</option></select>
-              </div>
-
-          </div>
+    </div>
 
 
     <div
@@ -47,7 +57,7 @@
 
         <br/><br/><br/><br/>
 
-        </div>
+    </div>
 </div>
 </body>
 </html>
