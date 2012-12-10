@@ -4,7 +4,7 @@ Central Configuration Repository
 ## Overview
 Central Configuration Repository is REST-ful service that stores application configuration settings in a centralized location.
 Each setting is comprised of a composite key, a value, cache expiration, and effective dates. Additionally, support is included
-for default values at each segment of the hierarchy.
+for default values at the environment segment of the hierarchy.
 
 ### Composite Key
 Each configuration setting is keyed based on environment, application, scope, and name. These values create a hierarchy
