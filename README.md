@@ -1,7 +1,9 @@
-CentralConfigurationRepository
-==============================
+Central Configuration Repository
+================================
 
 A REST-ful service repository that stores application configuration settings in a centralized location.
+
+The service is comprised of several different endpoints that each offer a slice of related functionality.
 
 ##APIs
 
@@ -33,7 +35,7 @@ released code / functionality. These most often include:
 - Production
 - Production Backup / Warm Standby
 
-Obviously, these will be different depending upon the needs of the specific business. The CentralConfigurationRepository
+Obviously, these will be different depending upon the needs of the specific business. The Central Configuration Repository
 implementation makes no assumptions as to the architecture of environment, nor does it impose any restrictions on how
 environments are used.
 
@@ -41,7 +43,7 @@ This level of hierarchy offers great flexibility in supporting any environment t
 
 ##### Application
 The application segment is generally used to distinguish specific products and / or groups of products that perform / provide
-distinctive functionality. As with the environment segment, the CentralConfigurationRepository imposes no restrictions
+distinctive functionality. As with the environment segment, the Central Configuration Repository imposes no restrictions
 and is totally flexible in regards to how applications are defined and used.
 
 ##### Scope
