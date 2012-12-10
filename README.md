@@ -13,7 +13,7 @@ This is the endpoint that should be used to request the settings latest value.
 #### Resource Identification URIs
 The CMS API is rooted at /setting and has the following hierarchy:
 
-    /:environment - indicates the environment in which the desired settings have been deployed.
+    /:environment - indicates the environment for which the desired settings are being requested.
     /:application - indicates the application for which the desired settings are being requested.
     /:scope - indicates the scope for which the desired settings are being requested.
     /:setting - indicates the name of the configuration setting being requested.
@@ -52,6 +52,13 @@ example would be database connection information.
 As with the other segments there are no restrictions on how scopes can be defined.
 
 #### Examples
+
+As noted above it is possible to perform discovery by starting at the root hierarchy segment and build the URI to the desired setting.
+
+    The /setting URI will return a list of the environments available.
+    The /setting/production URI will return a list of the applications available in the production environment.
+    The /setting/production/webservice URI will return a list of the scopes available in the webservice application in the production environment.
+    The /setting/production/webservice/logging URI will return a list of the logging settings for the webservice appliction in the production environment.
 
 ### Batch Configuration Provider Service
 
