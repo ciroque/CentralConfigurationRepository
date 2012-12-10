@@ -18,3 +18,13 @@ frisby_module.create('...description...')
     .expectStatus(200)
     .expectHeaderContains('x-rest-ack', 'ACK')
     .toss();
+
+frisby_module.create('...description...')
+    .get(
+        settings.service.protocol + '://' +
+            settings.service.hostname + ':' +
+            settings.service.port + '/')
+    .expectStatus(200)
+    .expectHeaderContains('x-rest-ack', 'ACK')
+    .expectBodyContains('ping')
+    .toss();
