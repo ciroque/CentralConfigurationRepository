@@ -1,9 +1,48 @@
 Central Configuration Repository
 ================================
 
-A REST-ful service repository that stores application configuration settings in a centralized location.
+## Overview
+Central Configuration Repository is REST-ful service that stores application configuration settings in a centralized location.
+Each setting is comprised of a composite key, a value, cache expiration, and effective dates. Additionally, support is included
+for default values at each segment of the hierarchy.
 
+### Composite Key
+Each configuration setting is keyed based on environment, application, scope, and name. These values create a hierarchy
+that uniquely identifies a specific configuration value.
+
+### Cache Expiration
+The definition of a configuration setting includes a cache lifetime component as well. Clients of the service
+should use this value to minimize calls to the service. The cache lifetime is a numeric value can is generally intended
+to indicate the number of seconds the value should be cached before subsequent calls to the service are made. However,
+these semantics are not enforced within the service and so the value can be interpreted in any manner desirable.
+
+### Effective Dates
+It is possible to define a date range during which a given configuration value is valid. Part of a value's definition are
+the eff_date and end_date fields. This makes it possible to schedule configuration changes for future dates, and retire existing
+values. The service currently maintains the history of changes for each value. This realizes an audit trail of changes.
+
+### Default Values
+it is possible to define a default value using the string 'default' (without quotes) at the environment segment of the hierarchy. The service
+will automatically return the default value, if it exists, when a query contains a request that cannot be satisfied due to expiration
+values, or the non-existence of a value for the specified environment. For example, if a request comes in as follows:
+
+    /setting/nonexistent/webservice/logging/logfilename
+
+and there is no environment named nonexistent defined, but a default environment IS defined and the remaining segments can be resolved,
+the configuration value defined as the default will be returned. This provides the ability to designate a fallback configuration value, or support a configuration value that does
+ not change across environments without having to define the configuration value in each environment.
+
+### Composition
 The service is comprised of several different endpoints that each offer a slice of related functionality.
+
+- Provider Endpoints
+ - Configuration Provider Service
+ - Batch Configuration Provider Service
+- Management Endpoints
+ - Configuration Management Service
+- Monitoring / Performance Endpoints
+ - Access Statistics Provider Service
+ - Audit Log Provider Service
 
 ##APIs
 
