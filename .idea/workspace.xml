@@ -2,14 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f00f0f7-0337-41a3-a4b2-031b3c120377" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/web/assets/js/CcrList.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/web/assets/js/CcrServiceClient.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/web/assets/js/admin_index.js" afterPath="$PROJECT_DIR$/lib/web/assets/js/admin_index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/web/admin/index.html" afterPath="$PROJECT_DIR$/lib/web/admin/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="649fcbbd-90a2-4dc5-bf96-0ff055333155" name="just ignore this" comment="" />
     <ignored path="CentralConfigurationRepository.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="9f00f0f7-0337-41a3-a4b2-031b3c120377" time="1355199403048" ignored="false" />
-    <file path="/index.html" changelist="9f00f0f7-0337-41a3-a4b2-031b3c120377" time="1354772413774" ignored="false" />
-    <file path="/admin_index.js" changelist="9f00f0f7-0337-41a3-a4b2-031b3c120377" time="1354772997612" ignored="false" />
+    <file path="/Dummy.txt" changelist="9f00f0f7-0337-41a3-a4b2-031b3c120377" time="1355199828500" ignored="false" />
+    <file path="/index.html" changelist="9f00f0f7-0337-41a3-a4b2-031b3c120377" time="1355202503881" ignored="false" />
+    <file path="/admin_index.js" changelist="9f00f0f7-0337-41a3-a4b2-031b3c120377" time="1355205585908" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Avalara/SharedConfiguration/source/admin_web/assets/js/index.js" changelist="9f00f0f7-0337-41a3-a4b2-031b3c120377" time="1355203840257" ignored="false" />
+    <file path="/CcrServiceClient.js" changelist="9f00f0f7-0337-41a3-a4b2-031b3c120377" time="1355202127590" ignored="false" />
+    <file path="/CcrList.js" changelist="9f00f0f7-0337-41a3-a4b2-031b3c120377" time="1355205481958" ignored="false" />
+    <file path="/a.dummy" changelist="9f00f0f7-0337-41a3-a4b2-031b3c120377" time="1355204028690" ignored="false" />
+    <file path="/index.js" changelist="9f00f0f7-0337-41a3-a4b2-031b3c120377" time="1355203776946" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -6566,24 +6575,26 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.61876637">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/lib/web/admin/index.html">
+          <file leaf-file-name="CcrList.js" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/lib/web/assets/js/CcrList.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="39" column="32" selection-start="964" selection-end="972" vertical-scroll-proportion="-0.625">
-                  <folding />
+                <state line="27" column="28" selection-start="716" selection-end="716" vertical-scroll-proportion="0.44935805">
+                  <folding>
+                    <element signature="n#!!doc;n#CcrList#0" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="admin_index.js" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/lib/web/assets/js/admin_index.js">
+          <file leaf-file-name="CcrServiceClient.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lib/web/assets/js/CcrServiceClient.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="21" column="1" selection-start="415" selection-end="415" vertical-scroll-proportion="0.24807057">
+                <state line="24" column="36" selection-start="767" selection-end="767" vertical-scroll-proportion="0.0">
                   <folding>
-                    <element signature="e#0#152#0" expanded="false" />
+                    <element signature="n#!!doc;n#CcrServiceClient#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -6593,20 +6604,22 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="common.css" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/lib/web/assets/css/common.css">
+          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lib/web/admin/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="83" column="1" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.0">
+                <state line="44" column="0" selection-start="1124" selection-end="1124" vertical-scroll-proportion="-27.5">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="DefaultEndpoint_spec.js" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/test/api/DefaultEndpoint_spec.js">
+          <file leaf-file-name="admin_index.js" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/lib/web/assets/js/admin_index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="12" column="43" selection-start="267" selection-end="267" vertical-scroll-proportion="0.20134228">
-                  <folding />
+                <state line="33" column="0" selection-start="913" selection-end="913" vertical-scroll-proportion="0.5777461">
+                  <folding>
+                    <element signature="e#0#152#0" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -6621,6 +6634,11 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="ciroque" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitLogSettings">
@@ -6631,8 +6649,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/test/unit/ConfigurationManagmentService_0_0_1Fixture.js" />
-        <option value="$PROJECT_DIR$/test/reset_dependencies.sh" />
         <option value="$PROJECT_DIR$/lib/service/DataStore.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/test/run_unit_tests.sh" />
@@ -6644,9 +6660,11 @@
         <option value="$PROJECT_DIR$/test/api/ConfigurationManagementService_0_0_1_spec.js" />
         <option value="$PROJECT_DIR$/test/api/ConfigurationProviderService0_0_1_spec.js" />
         <option value="$PROJECT_DIR$/lib/web/assets/css/common.css" />
+        <option value="$PROJECT_DIR$/test/api/DefaultEndpoint_spec.js" />
+        <option value="$PROJECT_DIR$/lib/web/assets/js/CcrServiceClient.js" />
         <option value="$PROJECT_DIR$/lib/web/admin/index.html" />
         <option value="$PROJECT_DIR$/lib/web/assets/js/admin_index.js" />
-        <option value="$PROJECT_DIR$/test/api/DefaultEndpoint_spec.js" />
+        <option value="$PROJECT_DIR$/lib/web/assets/js/CcrList.js" />
       </list>
     </option>
   </component>
@@ -6940,28 +6958,31 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="222" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="232" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="project.structure.proportion" value="0.0" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="222" />
-    <property name="options.lastSelected" value="copyright" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="222" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="237" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1140" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1140" />
-    <property name="DefaultHtmlFileTemplate" value="Html" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1140" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="237" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="232" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="options.lastSelected" value="editor.preferences.appearance" />
+    <property name="DefaultHtmlFileTemplate" value="Html" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -7144,7 +7165,11 @@
       <created>1355199179449</created>
       <updated>1355199179449</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="updating comments on DefaultEndpoint API tests&#10;">
+      <created>1355199882982</created>
+      <updated>1355199882982</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -7174,6 +7199,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22055675" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -7188,14 +7214,13 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1814301" sideWeight="0.6713062" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1814301" sideWeight="0.77944326" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Kahlua" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22400858" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39978564" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="JsTestDriver Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
@@ -7240,7 +7265,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
     <option name="LAST_COMMIT_MESSAGE" value="updating comments on DefaultEndpoint API tests&#10;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -7292,21 +7317,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationManagementService_0_0_1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.5257271" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/service/settings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/ConfigurationManagmentService_0_0_1Fixture.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="79" selection-start="387" selection-end="387" vertical-scroll-proportion="-0.30201343" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/service/endpoint_implementation_modules/ConfigurationProviderService_0_0_1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="140" column="79" selection-start="5360" selection-end="5360" vertical-scroll-proportion="2.2080536" />
@@ -7349,20 +7359,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/web/assets/css/common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="1" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/web/admin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="32" selection-start="964" selection-end="972" vertical-scroll-proportion="-0.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/api/DefaultEndpoint_spec.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="43" selection-start="267" selection-end="267" vertical-scroll-proportion="0.20134228">
@@ -7377,15 +7373,130 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/web/assets/css/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="1" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.7133407">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/web/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="0" selection-start="1124" selection-end="1124" vertical-scroll-proportion="-27.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/async/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="2042" selection-start="2622" selection-end="2622" vertical-scroll-proportion="0.56686044">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/web/assets/js/CcrServiceClient.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="36" selection-start="767" selection-end="767" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc;n#CcrServiceClient#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/web/assets/js/admin_index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="1" selection-start="415" selection-end="415" vertical-scroll-proportion="0.24807057">
+        <state line="33" column="0" selection-start="913" selection-end="913" vertical-scroll-proportion="0.5777461">
           <folding>
             <element signature="e#0#152#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/web/assets/js/CcrList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="28" selection-start="716" selection-end="716" vertical-scroll-proportion="0.44935805">
+          <folding>
+            <element signature="n#!!doc;n#CcrList#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Python 2.7.3 (/usr/bin/python2.7) interpreter library</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>CentralConfigurationRepository</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
 
