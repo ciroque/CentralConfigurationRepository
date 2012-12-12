@@ -1,0 +1,1 @@
+memcached on Windows -> http://www.codeforest.net/how-to-install-memcached-on-windows-machine
