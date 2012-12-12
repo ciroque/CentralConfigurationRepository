@@ -12,7 +12,7 @@ frisby_module.create('Tests that calling the root endpoint returns a list of ava
     .get(
         settings.service.protocol + '://' +
         settings.service.hostname + ':' +
-        settings.service.port + '/setting')
+        settings.service.port + '/ccr/setting')
     .expectStatus(200)
     .expectHeaderContains('x-api-version', '0.0.1')
     .expectBodyContains('key')
@@ -23,7 +23,7 @@ frisby_module.create('Tests that calling the endpoint with an environment return
     .get(
         settings.service.protocol + '://' +
         settings.service.hostname + ':' +
-        settings.service.port + '/setting/default')
+        settings.service.port + '/ccr/setting/default')
     .expectStatus(200)
     .expectHeaderContains('x-api-version', '0.0.1')
     .expectBodyContains('key')
@@ -34,7 +34,7 @@ frisby_module.create('Tests that calling the endpoint with an environment and ap
     .get(
         settings.service.protocol + '://' +
         settings.service.hostname + ':' +
-        settings.service.port + '/setting/default/application2')
+        settings.service.port + '/ccr/setting/default/application2')
     .expectStatus(200)
     .expectHeaderContains('x-api-version', '0.0.1')
     .expectBodyContains('key')
@@ -45,7 +45,7 @@ frisby_module.create('Tests that calling the endpoint with an environment, appli
     .get(
         settings.service.protocol + '://' +
         settings.service.hostname + ':' +
-        settings.service.port + '/setting/default/application2/scope')
+        settings.service.port + '/ccr/setting/default/application2/scope')
     .expectStatus(200)
     .expectHeaderContains('x-api-version', '0.0.1')
     .expectBodyContains('key')
@@ -56,7 +56,7 @@ frisby_module.create('Tests that calling the endpoint with an environment, appli
     .get(
         settings.service.protocol + '://' +
         settings.service.hostname + ':' +
-        settings.service.port + '/setting/default/application2/scope/setting')
+        settings.service.port + '/ccr/setting/default/application2/scope/setting')
     .expectStatus(200)
     .expectHeaderContains('x-api-version', '0.0.1')
     .expectBodyContains('key')
@@ -75,7 +75,7 @@ frisby_module.create('The specified environment is returned when a default envir
     .get(
         settings.service.protocol + '://' +
         settings.service.hostname + ':' +
-        settings.service.port + '/setting/prod/application2/scope/setting')
+        settings.service.port + '/ccr/setting/prod/application2/scope/setting')
     .expectStatus(200)
     .expectHeaderContains('x-api-version', '0.0.1')
     .expectBodyContains('key')
@@ -95,7 +95,7 @@ frisby_module.create('Default environment is returned when requested environment
     .get(
         settings.service.protocol + '://' +
         settings.service.hostname + ':' +
-        settings.service.port + '/setting/prod/application4/scope/setting')
+        settings.service.port + '/ccr/setting/prod/application4/scope/setting')
     .expectStatus(200)
     .expectHeaderContains('x-api-version', '0.0.1')
     .expectBodyContains('key')
@@ -114,7 +114,7 @@ frisby_module.create('Default environment is returned when requested environment
 frisby_module.create('Application not found')
     .get(settings.service.protocol + '://' +
     settings.service.hostname + ':' +
-    settings.service.port + '/setting/prod/blase')
+    settings.service.port + '/ccr/setting/prod/blase')
     .expectStatus(404)
     .expectHeaderContains('x-api-version', '0.0.1')
     .toss();
@@ -122,7 +122,7 @@ frisby_module.create('Application not found')
 frisby_module.create('Scope not found')
     .get(settings.service.protocol + '://' +
     settings.service.hostname + ':' +
-    settings.service.port + '/setting/prod/application2/blase')
+    settings.service.port + '/ccr/setting/prod/application2/blase')
     .expectStatus(404)
     .expectHeaderContains('x-api-version', '0.0.1')
     .toss();
@@ -130,7 +130,7 @@ frisby_module.create('Scope not found')
 frisby_module.create('Setting not found')
     .get(settings.service.protocol + '://' +
     settings.service.hostname + ':' +
-    settings.service.port + '/setting/prod/application2/scope/blase')
+    settings.service.port + '/ccr/setting/prod/application2/scope/blase')
     .expectStatus(404)
     .expectHeaderContains('x-api-version', '0.0.1')
     .toss();

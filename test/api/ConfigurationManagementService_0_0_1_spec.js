@@ -12,7 +12,7 @@ var settings = new settings_module.Settings('../../lib/service/settings.json');
 frisby_module.create('List environments')
     .get(settings.service.protocol + '://' +
         settings.service.hostname + ':' +
-        settings.service.port + '/schedule')
+        settings.service.port + '/ccr/schedule')
     .expectStatus(200)
     .expectHeaderContains('x-api-version', '0.0.1')
     .expectBodyContains('key')
@@ -22,7 +22,7 @@ frisby_module.create('List environments')
 frisby_module.create('List applications')
     .get(settings.service.protocol + '://' +
         settings.service.hostname + ':' +
-        settings.service.port + '/schedule/prod')
+        settings.service.port + '/ccr/schedule/prod')
     .expectStatus(200)
     .expectHeaderContains('x-api-version', '0.0.1')
     .expectBodyContains('key')
@@ -32,7 +32,7 @@ frisby_module.create('List applications')
 frisby_module.create('List scopes')
     .get(settings.service.protocol + '://' +
         settings.service.hostname + ':' +
-        settings.service.port + '/schedule/prod/application2')
+        settings.service.port + '/ccr/schedule/prod/application2')
     .expectStatus(200)
     .expectHeaderContains('x-api-version', '0.0.1')
     .expectBodyContains('key')
@@ -42,7 +42,7 @@ frisby_module.create('List scopes')
 frisby_module.create('List settings')
     .get(settings.service.protocol + '://' +
         settings.service.hostname + ':' +
-        settings.service.port + '/schedule/prod/application2/scope')
+        settings.service.port + '/ccr/schedule/prod/application2/scope')
     .expectStatus(200)
     .expectHeaderContains('x-api-version', '0.0.1')
     .expectBodyContains('key')
@@ -52,7 +52,7 @@ frisby_module.create('List settings')
 frisby_module.create('Retrieve value')
     .get(settings.service.protocol + '://' +
         settings.service.hostname + ':' +
-        settings.service.port + '/schedule/prod/application2/scope/setting')
+        settings.service.port + '/ccr/schedule/prod/application2/scope/setting')
     .expectStatus(200)
     .expectHeaderContains('x-api-version', '0.0.1')
     .expectBodyContains('key')
@@ -62,7 +62,7 @@ frisby_module.create('Retrieve value')
 frisby_module.create('Application not found')
     .get(settings.service.protocol + '://' +
     settings.service.hostname + ':' +
-    settings.service.port + '/schedule/prod/blase')
+    settings.service.port + '/ccr/schedule/prod/blase')
     .expectStatus(404)
     .expectHeaderContains('x-api-version', '0.0.1')
     .toss();
@@ -70,7 +70,7 @@ frisby_module.create('Application not found')
 frisby_module.create('Scope not found')
     .get(settings.service.protocol + '://' +
     settings.service.hostname + ':' +
-    settings.service.port + '/schedule/prod/application2/blase')
+    settings.service.port + '/ccr/schedule/prod/application2/blase')
     .expectStatus(404)
     .expectHeaderContains('x-api-version', '0.0.1')
     .toss();
@@ -78,7 +78,7 @@ frisby_module.create('Scope not found')
 frisby_module.create('Setting not found')
     .get(settings.service.protocol + '://' +
     settings.service.hostname + ':' +
-    settings.service.port + '/schedule/prod/application2/scope/blase')
+    settings.service.port + '/ccr/schedule/prod/application2/scope/blase')
     .expectStatus(404)
     .expectHeaderContains('x-api-version', '0.0.1')
     .toss();
