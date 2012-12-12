@@ -26,7 +26,7 @@ It is possible to define a default value using the string 'default' (without quo
 will automatically return the default value, if defined, when a query contains a request that cannot be satisfied due to expiration
 values, or the non-existence of a value for the specified environment. For example, if a request comes in as follows:
 
-    /setting/nonexistent/webservice/logging/logfilename
+    /ccr/setting/nonexistent/webservice/logging/logfilename
 
 and there is no environment named nonexistent defined, but a default environment IS defined and the remaining segments can be resolved,
 the configuration value defined as the default will be returned. This provides the ability to designate a fallback configuration value, or support a configuration value that does
@@ -96,10 +96,10 @@ As with the other segments there are no restrictions on how scopes can be define
 
 As noted above it is possible to perform discovery by starting at the root hierarchy segment and build the URI to the desired setting.
 
-    The /setting URI will return a list of the environments available.
-    The /setting/production URI will return a list of the applications available in the production environment.
-    The /setting/production/webservice URI will return a list of the scopes available in the webservice application in the production environment.
-    The /setting/production/webservice/logging URI will return a list of the logging settings for the webservice appliction in the production environment.
+    The /ccr/setting URI will return a list of the environments available.
+    The /ccr/setting/production URI will return a list of the applications available in the production environment.
+    The /ccr/setting/production/webservice URI will return a list of the scopes available in the webservice application in the production environment.
+    The /ccr/setting/production/webservice/logging URI will return a list of the logging settings for the webservice appliction in the production environment.
 
 ### Batch Configuration Provider Service
 
