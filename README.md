@@ -52,7 +52,7 @@ The service is comprised of several different endpoints that each offer a slice 
 This is the endpoint that should be used to request the settings latest value.
 
 #### Resource Identification URIs
-The CMS API is rooted at /setting and has the following hierarchy:
+The CPS API is rooted at /setting and has the following hierarchy:
 
     /:environment - indicates the environment for which the desired settings are being requested.
     /:application - indicates the application for which the desired settings are being requested.
