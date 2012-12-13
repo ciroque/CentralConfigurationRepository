@@ -23,7 +23,7 @@ exports.primaryTestGroup = test_case(
             var mock_rest_server = {
                 registerRoute : function(verb, path, version, handler) {
                     test.equal(verb, 'get');
-                    test.equal(path, '/path1');
+                    test.ok(path.indexOf('/path1') > 0);
                     test.equal(typeof(handler), 'function');
                 }
             };

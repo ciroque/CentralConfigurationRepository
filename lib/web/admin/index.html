@@ -47,33 +47,30 @@
 
         <div class="sechdr">Configuration Selection</div>
 
+        <label for="_envList" class="lstlbl">Environments</label>
         <div class="lstcont">
-
-            <label for="_envList" class="lstlbl">Environments</label>
-            <select id="_envList" size="8">
+            <select id="_envList" size="8" class="seglst">
                 <option>environments</option>
             </select>
-
-
         </div>
 
+        <label for="_appList" class="lstlbl">Applications</label>
         <div class="lstcont">
-            <label for="_appList" class="lstlbl">Applications</label>
-            <select id="_appList" size="8">
+            <select id="_appList" size="8" class="seglst">
                 <option>applications</option>
             </select>
         </div>
 
+        <label for="_scpList" class="lstlbl">Scopes</label>
         <div class="lstcont">
-            <label for="_scpList" class="lstlbl">Scopes</label>
-            <select id="_scpList" size="8">
+            <select id="_scpList" size="8" class="seglst">
                 <option>scopes</option>
             </select>
         </div>
 
+        <label for="_setList" class="lstlbl">Settings</label>
         <div class="lstcont">
-            <label for="_setList" class="lstlbl">Settings</label>
-            <select id="_setList" size="8">
+            <select id="_setList" size="8" class="seglst">
                 <option>settings</option>
             </select>
         </div>
@@ -81,15 +78,28 @@
     </div>
 
     <div  class="seccont">
-        <div class="sechdr">Values</div>
-        <br/><br/><br/><br/>
+        <div class="sechdr">Values & Audit History</div>
+        <div class="lstlbl">Values</div>
+        <div class="lstcont" style="padding-top:4px;">
 
-    </div>
-
-    <div  class="seccont">
-        <div class="sechdr">Audit History</div>
-        <br/><br/><br/><br/>
-
+            <div>
+                <label for="_valueText" class="txtlbl">Value</label>
+                <input type="text" id="_valueText"/>
+            </div>
+            <div>
+                <label for="_cacheLiftetimeText" class="txtlbl">Cache Lifetime</label>
+                <input type="text" id="_cacheLiftetimeText"/>
+            </div>
+            <div>
+                <label for="_effectiveDateText" class="txtlbl">Effective Date</label>
+                <input type="text" id="_effectiveDateText"/>
+            </div>
+            <div>
+                <label for="_endDateText" class="txtlbl">End Date</label>
+                <input type="text" id="_endDateText"/>
+            </div>
+        </div>
+        <div class="lstlbl">Audit History</div>
     </div>
 </div>
 </body>

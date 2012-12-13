@@ -11,7 +11,7 @@
 var environments = ['dev', 'ci', 'qa', 'qa2', 'accept', 'prod-stage', 'prod', 'ha'];
 var applications = ['websvc1', 'websvc2', 'admin web', 'test tool', 'account manager', 'warehouse manager', 'SMARTSWeb', 'LYCARS'];
 var scopesAndSettings = [
-    { 'logging' : ['logFileame', 'logLevel'] },
+    { 'logging' : ['logFilename', 'logLevel'] },
     { 'connectionStrings' : ['account', 'audit', 'warehouse'] },
     { 'email' : ['serverName', 'sendAccount', 'recipientList'] }
 ];

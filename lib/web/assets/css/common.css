@@ -37,7 +37,7 @@ body {
 
 select {
     border:none;
-    background-color: rgb(196,196,196);
+    background-color: rgba(196,196,196, 0.7);
     display: inline-block;
     height:90%;
     opacity: 1;
@@ -52,24 +52,28 @@ select {
     display: inline-block;
     height: 200px;
     opacity:1;
+    padding-bottom: 6px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 6px;
     text-align: center;
     vertical-align: middle;
-    width:24.5%;
+    /*width:24.5%;*/
 }
 
 .lstlbl {
     -webkit-transform: rotate(270deg);
     -moz-transform: rotate(270deg);
     -o-transform: rotate(270deg);
-    border:solid 1px inherit;
+    border:solid 1px pink;
     color: rgb(58, 67, 108);
     display: inline-block;
     font-family: Arial,Consolas,sans-serif;
     font-weight: bold;
-    height: 10%;
-    padding-right: 2pt;
-    text-align: right;
-    width:10px;
+    /*height: 10%;*/
+    /*padding-right: 2pt;*/
+    text-align: left;
+    /*width:20px;*/
 }
 
 .seccont {
@@ -94,4 +98,14 @@ select {
     padding-right: 2px;
     padding-left: 6px;
     padding-bottom: 2px;
+}
+
+.seglst {
+    width: 180px;
+ }
+
+.txtlbl {
+    display : inline-block;
+    text-align: left;
+    width: 30%  ;
 }
