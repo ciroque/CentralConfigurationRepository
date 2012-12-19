@@ -80,12 +80,10 @@ gpgcheck=0" | tee -a /etc/yum.repos.d/10gen.repo
     fi
 
     git clone "https://github.com/ciroque/CentralConfigurationRepository.git"
-    mv ./Shared/SharedConfiguration .
-    rm -R ./Shared
 
     echo
     echo ===== Installing Node module dependencies
-    pushd ./$INSTALL_DIRECTORY/source
+#    pushd ./$INSTALL_DIRECTORY/lib
     npm install -d
     popd
 
@@ -99,22 +97,24 @@ gpgcheck=0" | tee -a /etc/yum.repos.d/10gen.repo
 
     echo
     echo ===== Copying init.d script into place and configuring for automatic startup
-    cp $INSTALL_PATH/$INSTALL_DIRECTORY/source/etc_init.d/$STARTUP_SCRIPT_NAME /etc/init.d
-    chkconfig --add /etc/init.d/$STARTUP_SCRIPT_NAME
+#    cp $INSTALL_PATH/$INSTALL_DIRECTORY/source/etc_init.d/$STARTUP_SCRIPT_NAME /etc/init.d
+#    chkconfig --add /etc/init.d/$STARTUP_SCRIPT_NAME
 
     echo
     echo ===== Importing the initial configuration settings into the datastore
-    mongoimport -d scs -c settings --drop --file $INSTALL_PATH/$INSTALL_DIRECTORY/tests/unit/seed_data/initial_seed_data.dat
+    mongoimport -d ccr -c settings --drop --file $INSTALL_PATH/$INSTALL_DIRECTORY/seed_data/initial_settings.dat
 
     echo
     echo ===== Starting all services
-    cd $INSTALL_PATH/$INSTALL_DIRECTORY/source
-    /etc/init.d/$STARTUP_SCRIPT_NAME start
+#    cd $INSTALL_PATH/$INSTALL_DIRECTORY/source
+#    /etc/init.d/$STARTUP_SCRIPT_NAME start
 
     echo
     echo ===== Running smoke tests...
-    cd $INSTALL_PATH/$INSTALL_DIRECTORY/tests/smoke
+    cd $INSTALL_PATH/$INSTALL_DIRECTORY/test
     npm install frisby
-    ../../source/node_modules/jasmine-node/bin/jasmine-node .
+    ./run_api_tests.sh
 
 }
+
+run
