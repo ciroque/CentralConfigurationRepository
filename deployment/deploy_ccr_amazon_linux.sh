@@ -41,7 +41,7 @@ name=10gen Repository
 baseurl=http://downloads-distro.mongodb.org/repo/redhat/os/x86_64
 gpgcheck=0" | tee -a /etc/yum.repos.d/10gen.repo
 
-    $PACKAGE_MANAGER -y install mongo-10gen-server
+    $PACKAGE_MANAGER -y install mongo-10gen mongo-10gen-server
     $PACKAGE_MANAGER -y install sysstat
 
     mkdir -p $MONGODB_ROOT_PATH/data
@@ -53,7 +53,7 @@ gpgcheck=0" | tee -a /etc/yum.repos.d/10gen.repo
     chown mongod:mongod $MONGODB_ROOT_PATH/journal
 
     echo ===== starting mongodb
-    service mongodb start
+    service mongod start
 
     echo
     echo ===== Ensuring Node.js is installed
