@@ -44,6 +44,8 @@ gpgcheck=0" | tee -a /etc/yum.repos.d/10gen.repo
     $PACKAGE_MANAGER -y install mongo-10gen mongo-10gen-server
     $PACKAGE_MANAGER -y install sysstat
 
+    service mongod stop
+
     mkdir -p $MONGODB_ROOT_PATH/data
     mkdir -p $MONGODB_ROOT_PATH/log
     mkdir -p $MONGODB_ROOT_PATH/journal
@@ -56,11 +58,6 @@ gpgcheck=0" | tee -a /etc/yum.repos.d/10gen.repo
     service mongod start
 
     echo
-    echo ===== Ensuring Node.js is installed
-    $PACKAGE_MANAGER localinstall --nogpgcheck http://nodejs.tchol.org/repocfg/amzn1/nodejs-stable-release.noarch.rpm
-    $PACKAGE_MANAGER -y install nodejs-compat-symlinks npm
-
-    echo
     echo ===== Ensuring temporary build path exists
     if [ -d $TMP_BUILD_PATH ]
     then
@@ -68,8 +65,31 @@ gpgcheck=0" | tee -a /etc/yum.repos.d/10gen.repo
     fi
     mkdir -p $TMP_BUILD_PATH
     echo
+
+
     echo ===== Ensuring the deployment directory exists
     mkdir -p $INSTALL_PATH
+
+    echo
+    echo ===== Ensuring Node.js is installed
+    pushd $TMP_BUILD_PATH
+    mkdir node
+    pushd node
+    wget http://nodejs.org/dist/node-latest.tar.gz
+    tar --strip-components=1 -zxf node-latest.tar.gz
+    ./configure --prefix=/usr
+    make
+    make install
+    popd
+
+    echo
+    echo ===== Ensuring Node Package Manager is installed
+    git clone http://github.com/isaacs/npm.git
+    pushd npm
+    make install
+    popd
+
+    popd
 
     pushd $INSTALL_PATH > /dev/null
 
