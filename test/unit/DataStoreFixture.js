@@ -23,6 +23,7 @@ exports.retrieveActiveSettingTests = test_case(
             this.settings = new settings_module.Settings(TEST_SETTINGS_PATH);
             this.log_writer = new log_writer_module.LogWriter(this.settings);
             this.data_store = data_store_factory.createDataStore(this.settings, this.log_writer);
+
             callback();
         },
 
@@ -370,6 +371,118 @@ exports.retrieveSettingScheduleTests = test_case(
                             test.equal(setting.key.setting, 'setting');
                         }
                     );
+
+                    test.done();
+                }
+            );
+        }
+    }
+);
+
+var test_document = {
+    key : {
+        environment : "update_tests_env",
+        application : "update_tests_app",
+        scope : "update_tests_scope",
+        setting : "update_tests_setting"
+    },
+    value : "original",
+    temporalization : {
+        cache_lifetime : 100,
+        eff_date : new Date(1970, 00, 01),
+        end_date : new Date(9999, 11, 31)
+    }
+};
+
+var update_document = {
+    "originalDocument": {
+        "_id": "50c95b2b685ad63bebc9d82e",
+        "key": {
+            environment : "update_tests_env",
+            application : "update_tests_app",
+            scope : "update_tests_scope",
+            setting : "update_tests_setting"
+        },
+        "value": "servername=thedatabase",
+        "temporalization": {
+            "cache_lifetime": 600,
+            "eff_date": "1970-01-01T00:00:00.000Z",
+            "end_date": "9999-12-31T08:00:00.000Z"
+        }
+    },
+    "updatedValues": {
+        "value": "servername=thedatabase",
+        "cache_lifetime": "600",
+        "eff_date": new Date(1968, 04, 31),
+        "end_date": new Date(2012, 04, 31)
+    }
+};
+
+exports.updateSettingsTests = test_case(
+    {
+        //
+        // cases:
+        // - e
+
+        setUp : function(callback) {
+            process.env['logging__log_level'] = 7;
+
+            this.settings = new settings_module.Settings(TEST_SETTINGS_PATH);
+            this.log_writer = new log_writer_module.LogWriter(this.settings);
+            this.datastore = data_store_factory.createDataStore(this.settings, this.log_writer);
+
+            var ctxt = this;
+
+            this.datastore.insertSetting(
+                test_document,
+                function(err, result) {
+                    if(err) {
+                        ctxt.log_writer.writeError(err);
+                    } else {
+                        ctxt.log_writer.writeDebug(result);
+                    }
+
+                    callback();
+                }
+            );
+
+
+        },
+
+        tearDown : function(callback) {
+
+            var ctxt = this;
+
+            this.datastore.deleteSetting(
+                test_document.key,
+                function(err, result) {
+                    if(err) {
+                        ctxt.log_writer.writeError(err);
+                    } else {
+                        ctxt.log_writer.writeDebug(result);
+                    }
+
+                    delete process.env['logging__log_level'];
+                    callback();
+                }
+            );
+        },
+
+        updateCacheLifetime : function(test) {
+            test.expect(5);
+
+            var ctxt = this;
+
+            this.datastore.updateSetting(
+                update_document,
+                function(err, result) {
+                    test.ok(err == null, err);
+
+                    ctxt.log_writer.writeInfo('updateSettingsTests >> updateSetting >> result == ' + JSON.stringify(result));
+                    test.equal(result.value, update_document.updatedValues.value);
+                    test.equal(result.temporalization.cache_lifetime, update_document.updatedValues.cache_lifetime);
+                    test.ok((result.temporalization.eff_date + '') == (update_document.updatedValues.eff_date + ''));
+                    test.equal((result.temporalization.end_date + ''), (update_document.updatedValues.end_date + ''));
 
                     test.done();
                 }
