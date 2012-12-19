@@ -51,7 +51,8 @@ gpgcheck=0" | tee -a /etc/yum.repos.d/10gen.repo
     chown mongod:mongod $MONGODB_ROOT_PATH/log
     chown mongod:mongod $MONGODB_ROOT_PATH/journal
 
-    /etc/init.d/mongod start
+    ## TODO: Ensure mongodb is started...
+    ## /etc/init.d/mongod start
 
     echo
     echo ===== Ensuring Node.js is installed
