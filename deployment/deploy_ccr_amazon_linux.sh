@@ -30,6 +30,7 @@ echo
     $PACKAGE_MANAGER install -y nginx
     $PACKAGE_MANAGER install -y memcached
 
+    echo ===== starting memcached
     service memcached start
 
     echo
@@ -51,8 +52,8 @@ gpgcheck=0" | tee -a /etc/yum.repos.d/10gen.repo
     chown mongod:mongod $MONGODB_ROOT_PATH/log
     chown mongod:mongod $MONGODB_ROOT_PATH/journal
 
-    ## TODO: Ensure mongodb is started...
-    ## /etc/init.d/mongod start
+    echo ===== starting mongodb
+    service mongodb start
 
     echo
     echo ===== Ensuring Node.js is installed
@@ -111,9 +112,9 @@ gpgcheck=0" | tee -a /etc/yum.repos.d/10gen.repo
 
     echo
     echo ===== Running smoke tests...
-    cd $INSTALL_PATH/$INSTALL_DIRECTORY/test
-    npm install frisby
-    ./run_api_tests.sh
+#    cd $INSTALL_PATH/$INSTALL_DIRECTORY/test
+#    npm install frisby
+#    ./run_api_tests.sh
 
 }
 
