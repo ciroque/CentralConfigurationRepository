@@ -193,3 +193,212 @@ exports.validateQueryPathTests = test_case(
         }
     }
 );
+
+exports.validateSettingDocumentTests = test_case(
+    {
+        validDocuentPassesMuster : function(test) {
+
+            test.expect(2);
+
+            var valid_document = {
+                key : {
+                    environment : 'environment',
+                    application : 'application',
+                    scope : 'scope',
+                    setting : 'setting'
+                },
+                value : 'value',
+                temporalization : {
+                    cache_lifetime : 600,
+                    eff_date : new Date(1970, 00, 01),
+                    end_date : new Date(9999, 11, 12)
+                }
+            };
+
+            var validator = new parameter_validator_module.ParameterValidator();
+
+            validator.validateSettingDocument(
+                valid_document,
+                function(err, result) {
+                    test.ok(err === null, err);
+                    test.ok(compareDeep(valid_document, result));
+                    test.done();
+                }
+            );
+        },
+
+        documentMissingTemporalizationDatesAreDefaulted : function(test) {
+
+            test.expect(3);
+
+            var missing_temporalization_dates = {
+                key : {
+                    environment : 'environment',
+                    application : 'application',
+                    scope : 'scope',
+                    setting : 'setting'
+                },
+                value : 'value',
+                temporalization : {
+                    cache_lifetime : 600
+                }
+            };
+
+            var expected_eff_date = new Date(1970,00,01)
+            var expected_end_date = new Date(9999,11,31)
+
+            var validator = new parameter_validator_module.ParameterValidator();
+
+            validator.validateSettingDocument(
+                missing_temporalization_dates,
+                function(err, document) {
+                    test.ok(err === null, err);
+
+                    test.equal(document.temporalization.eff_date + '', expected_eff_date + '');
+                    test.equal(document.temporalization.end_date + '', expected_end_date + '');
+
+                    test.done();
+                }
+            );
+        },
+
+        documentWithInvalidDateIsRejected : function(test) {
+            test.expect(4);
+
+            var invalid_date = {
+                key : {
+                    environment : 'environment',
+                    application : 'application',
+                    scope : 'scope',
+                    setting : 'setting'
+                },
+                value : 'value',
+                temporalization : {
+                    cache_lifetime : 600,
+                    eff_date : '',
+                    end_date : new Date()
+                }
+            };
+
+            var validator = new parameter_validator_module.ParameterValidator();
+
+            validator.validateSettingDocument(
+                invalid_date,
+                function(err, document) {
+                    test.ok(err !== null);
+
+                    test.equal(err.issues.length, 1);
+                    var issue = err.issues[0];
+
+                    test.equal(issue.name, 'eff_date');
+                    test.ok(issue.problem.indexOf('is an invalid date'));
+
+                    test.done();
+                }
+            );
+        },
+
+        cacheLifetimeMustBeNumeric : function(test) {
+            test.expect(4);
+
+            var invalid_cache_lifetime = {
+                key : {
+                    environment : 'environment',
+                    application : 'application',
+                    scope : 'scope',
+                    setting : 'setting'
+                },
+                value : 'value',
+                temporalization : {
+                    cache_lifetime : 'this is a string',
+                    eff_date : new Date(),
+                    end_date : new Date()
+                }
+            };
+
+            var validator = new parameter_validator_module.ParameterValidator();
+
+            validator.validateSettingDocument(
+                invalid_cache_lifetime,
+                function(err, document) {
+                    test.ok(err !== null);
+
+                    test.equal(err.issues.length, 1);
+                    var issue = err.issues[0];
+
+                    test.equal(issue.name, 'cache_lifetime');
+                    test.ok(issue.problem.indexOf('must be numeric'));
+
+                    test.done();
+                }
+            );
+        },
+
+        missingCacheLifetimeIsDefaulted : function(test) {
+            test.expect(2);
+
+            var invalid_cache_lifetime = {
+                key : {
+                    environment : 'environment',
+                    application : 'application',
+                    scope : 'scope',
+                    setting : 'setting'
+                },
+                value : 'value',
+                temporalization : {
+                    eff_date : new Date(),
+                    end_date : new Date()
+                }
+            };
+
+            var validator = new parameter_validator_module.ParameterValidator();
+
+            validator.validateSettingDocument(
+                invalid_cache_lifetime,
+                function(err, document) {
+                    test.ok(err === null, err);
+
+                    test.equal(document.temporalization.cache_lifetime, 600);
+
+                    test.done();
+                }
+            );
+        }
+    }
+);
+
+// lifted from http://stackoverflow.com/questions/1068834/object-comparison-in-javascript
+function compareDeep(left, right) {
+    if ( left === right ) return true;
+    // if both x and y are null or undefined and exactly the same
+
+    if ( ! ( left instanceof Object ) || ! ( right instanceof Object ) ) return false;
+    // if they are not strictly equal, they both need to be Objects
+
+    if ( left.constructor !== right.constructor ) return false;
+    // they must have the exact same prototype chain, the closest we can do is
+    // test there constructor.
+
+    for ( var p in left ) {
+        if ( ! left.hasOwnProperty( p ) ) continue;
+        // other properties were tested using x.constructor === y.constructor
+
+        if ( ! right.hasOwnProperty( p ) ) return false;
+        // allows to compare x[ p ] and y[ p ] when set to undefined
+
+        if ( left[ p ] === right[ p ] ) continue;
+        // if they have the same strict value or identity then they are equal
+
+        if ( typeof( left[ p ] ) !== "object" ) return false;
+        // Numbers, Strings, Functions, Booleans must be strictly equal
+
+        if ( ! Object.equals( left[ p ],  right[ p ] ) ) return false;
+        // Objects and Arrays must be tested recursively
+    }
+
+    for ( p in right ) {
+        if ( right.hasOwnProperty( p ) && ! left.hasOwnProperty( p ) ) return false;
+        // allows x[ p ] to be set to undefined
+    }
+    return true;
+}
