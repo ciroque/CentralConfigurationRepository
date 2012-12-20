@@ -363,6 +363,31 @@ exports.validateSettingDocumentTests = test_case(
                     test.done();
                 }
             );
+        },
+
+        missingKeyEnvironmentFails : function(test) {
+            test.fail('needs implementation');
+            test.done();
+        },
+
+        missingKeyApplicationFails : function(test) {
+            test.fail('needs implementation');
+            test.done();
+        },
+
+        missingKeyScopeFails : function(test) {
+            test.fail('needs implementation');
+            test.done();
+        },
+
+        missingKeySettingFails : function(test) {
+            test.fail('needs implementation');
+            test.done();
+        },
+
+        missingKeyApplicationAndScopeFails : function(test) {
+            test.fail('needs implementation');
+            test.done();
         }
     }
 );
