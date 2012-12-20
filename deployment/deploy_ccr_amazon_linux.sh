@@ -21,25 +21,25 @@ run() {
 
     echo
     echo
-    echo ||===== Ensuring prerequisites are installed
+    echo == ===== ===== ===== ===== Ensuring prerequisites are installed
     $PACKAGE_MANAGER install -y gcc-c++ make
     $PACKAGE_MANAGER install -y openssl-devel
     $PACKAGE_MANAGER install -y git
 
     echo
     echo
-    echo ||===== Ensuring nginx and memcached are installed
+    echo == ===== ===== ===== ===== Ensuring nginx and memcached are installed
     $PACKAGE_MANAGER install -y nginx
     $PACKAGE_MANAGER install -y memcached
 
     echo
     echo
-    echo ||===== starting memcached
+    echo == ===== ===== ===== ===== starting memcached
     service memcached start
 
     echo
     echo
-    echo ||===== Installing mongodb
+    echo == ===== ===== ===== ===== Installing mongodb
     echo "
 [10gen]
 name=10gen Repository
@@ -61,12 +61,12 @@ gpgcheck=0" | tee -a /etc/yum.repos.d/10gen.repo
 
     echo
     echo
-    echo ||===== starting mongodb
+    echo == ===== ===== ===== ===== starting mongodb
     #service mongod start
 
     echo
     echo
-    echo ||===== Ensuring temporary build path exists
+    echo == ===== ===== ===== ===== Ensuring temporary build path exists
     if [ -d $TMP_BUILD_PATH ]
     then
         rm -R $TMP_BUILD_PATH
@@ -75,12 +75,12 @@ gpgcheck=0" | tee -a /etc/yum.repos.d/10gen.repo
 
     echo
     echo
-    echo ||===== Ensuring the deployment directory exists
+    echo == ===== ===== ===== ===== Ensuring the deployment directory exists
     mkdir -p $INSTALL_PATH
 
     echo
     echo
-    echo ||===== Ensuring Node.js is installed
+    echo == ===== ===== ===== ===== Ensuring Node.js is installed
     pushd $TMP_BUILD_PATH
     mkdir node
     pushd node
@@ -93,7 +93,7 @@ gpgcheck=0" | tee -a /etc/yum.repos.d/10gen.repo
 
     echo
     echo
-    echo ||===== Ensuring Node Package Manager is installed
+    echo == ===== ===== ===== ===== Ensuring Node Package Manager is installed
     git clone http://github.com/isaacs/npm.git
     pushd npm
     make install
@@ -105,7 +105,7 @@ gpgcheck=0" | tee -a /etc/yum.repos.d/10gen.repo
 
     echo
     echo
-    echo ||===== Downloading sources from github
+    echo == ===== ===== ===== ===== Downloading sources from github
     if [ -d $INSTALL_PATH/$INSTALL_DIRECTORY ]
     then
         rm -R $INSTALL_PATH/$INSTALL_DIRECTORY
@@ -115,36 +115,36 @@ gpgcheck=0" | tee -a /etc/yum.repos.d/10gen.repo
 
     echo
     echo
-    echo ||===== Installing Node module dependencies
+    echo == ===== ===== ===== ===== Installing Node module dependencies
 #    pushd ./$INSTALL_DIRECTORY/lib
     npm install -d
     popd
 
     echo
     echo
-s    echo ||===== Installing forever
+s    echo == ===== ===== ===== ===== Installing forever
     npm install -g forever
 
     echo
-    echo ||===== Writing configuration files
+    echo == ===== ===== ===== ===== Writing configuration files
     echo TODO
 
     echo
-    echo ||===== Copying init.d script into place and configuring for automatic startup
+    echo == ===== ===== ===== ===== Copying init.d script into place and configuring for automatic startup
 #    cp $INSTALL_PATH/$INSTALL_DIRECTORY/source/etc_init.d/$STARTUP_SCRIPT_NAME /etc/init.d
 #    chkconfig --add /etc/init.d/$STARTUP_SCRIPT_NAME
 
     echo
-    echo ||===== Importing the initial configuration settings into the datastore
+    echo == ===== ===== ===== ===== Importing the initial configuration settings into the datastore
     mongoimport -d ccr -c settings --drop --file $INSTALL_PATH/$INSTALL_DIRECTORY/seed_data/initial_settings.dat
 
     echo
-    echo ||===== Starting all services
+    echo == ===== ===== ===== ===== Starting all services
 #    cd $INSTALL_PATH/$INSTALL_DIRECTORY/source
 #    /etc/init.d/$STARTUP_SCRIPT_NAME start
 
     echo
-    echo ||===== Running smoke tests...
+    echo == ===== ===== ===== ===== Running smoke tests...
 #    cd $INSTALL_PATH/$INSTALL_DIRECTORY/test
 #    npm install frisby
 #    ./run_api_tests.sh
