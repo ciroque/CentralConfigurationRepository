@@ -366,28 +366,181 @@ exports.validateSettingDocumentTests = test_case(
         },
 
         missingKeyEnvironmentFails : function(test) {
-            test.fail('needs implementation');
-            test.done();
+            test.expect(4);
+
+            var missing_environment = {
+                key : {
+                    application : 'application',
+                    scope : 'scope',
+                    setting : 'setting'
+                },
+                value : 'value',
+                temporalization : {
+                    cache_lifetime : 600,
+                    eff_date : new Date(),
+                    end_date : new Date()
+                }
+            };
+
+            var validator = new parameter_validator_module.ParameterValidator();
+
+            validator.validateSettingDocument(
+                missing_environment,
+                function(err, document) {
+                    test.ok(err !== null);
+
+                    test.equal(err.issues.length, 1);
+                    var issue = err.issues[0];
+
+                    test.equal(issue.name, 'environment');
+                    test.ok(issue.problem.indexOf('value for key field is required') > -1);
+
+                    test.done();
+                }
+            );
         },
 
         missingKeyApplicationFails : function(test) {
-            test.fail('needs implementation');
-            test.done();
+            test.expect(4);
+
+            var missing_environment = {
+                key : {
+                    environment : 'environment',
+                    scope : 'scope',
+                    setting : 'setting'
+                },
+                value : 'value',
+                temporalization : {
+                    cache_lifetime : 600,
+                    eff_date : new Date(),
+                    end_date : new Date()
+                }
+            };
+
+            var validator = new parameter_validator_module.ParameterValidator();
+
+            validator.validateSettingDocument(
+                missing_environment,
+                function(err, document) {
+                    test.ok(err !== null);
+
+                    test.equal(err.issues.length, 1);
+                    var issue = err.issues[0];
+
+                    test.equal(issue.name, 'application');
+                    test.ok(issue.problem.indexOf('value for key field is required') > -1);
+
+                    test.done();
+                }
+            );
         },
 
         missingKeyScopeFails : function(test) {
-            test.fail('needs implementation');
-            test.done();
+            test.expect(4);
+
+            var missing_environment = {
+                key : {
+                    environment : 'environment',
+                    application : 'application',
+                    setting : 'setting'
+                },
+                value : 'value',
+                temporalization : {
+                    cache_lifetime : 600,
+                    eff_date : new Date(),
+                    end_date : new Date()
+                }
+            };
+
+            var validator = new parameter_validator_module.ParameterValidator();
+
+            validator.validateSettingDocument(
+                missing_environment,
+                function(err, document) {
+                    test.ok(err !== null);
+
+                    test.equal(err.issues.length, 1);
+                    var issue = err.issues[0];
+
+                    test.equal(issue.name, 'scope');
+                    test.ok(issue.problem.indexOf('value for key field is required') > -1);
+
+                    test.done();
+                }
+            );
         },
 
         missingKeySettingFails : function(test) {
-            test.fail('needs implementation');
-            test.done();
+            test.expect(4);
+
+            var missing_environment = {
+                key : {
+                    environment : 'environment',
+                    application : 'application',
+                    scope : 'scope'
+                },
+                value : 'value',
+                temporalization : {
+                    cache_lifetime : 600,
+                    eff_date : new Date(),
+                    end_date : new Date()
+                }
+            };
+
+            var validator = new parameter_validator_module.ParameterValidator();
+
+            validator.validateSettingDocument(
+                missing_environment,
+                function(err, document) {
+                    test.ok(err !== null);
+
+                    test.equal(err.issues.length, 1);
+                    var issue = err.issues[0];
+
+                    test.equal(issue.name, 'setting');
+                    test.ok(issue.problem.indexOf('value for key field is required') > -1);
+
+                    test.done();
+                }
+            );
         },
 
         missingKeyApplicationAndScopeFails : function(test) {
-            test.fail('needs implementation');
-            test.done();
+            test.expect(6);
+
+            var missing_environment = {
+                key : {
+                    environment : 'environment',
+                    setting : 'setting'
+                },
+                value : 'value',
+                temporalization : {
+                    cache_lifetime : 600,
+                    eff_date : new Date(),
+                    end_date : new Date()
+                }
+            };
+
+            var validator = new parameter_validator_module.ParameterValidator();
+
+            validator.validateSettingDocument(
+                missing_environment,
+                function(err, document) {
+                    test.ok(err !== null);
+
+                    test.equal(err.issues.length, 2);
+
+                    var issue = err.issues[0];
+                    test.equal(issue.name, 'application');
+                    test.ok(issue.problem.indexOf('value for key field is required') > -1);
+
+                    var issue = err.issues[1];
+                    test.equal(issue.name, 'scope');
+                    test.ok(issue.problem.indexOf('value for key field is required') > -1);
+
+                    test.done();
+                }
+            );
         }
     }
 );
