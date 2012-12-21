@@ -83,44 +83,195 @@ frisby_module.create('Setting not found')
     .expectHeaderContains('x-api-version', '0.0.1')
     .toss();
 
-var valid_update_document = {
-    'originalDocument': {
-        'key': {
-            'environment': 'upd',
-            'application': 'appd',
-            'scope': 'scope',
-            'setting': 'setting'
-        },
-        'value': 'prdeml001',
-        'temporalization': {
-            'cache_lifetime': 600,
-            'eff_date': '1970-01-01T00:00:00.000Z',
-            'end_date': '9999-12-31T08:00:00.000Z'
-        }
-    },
-    'updatedDocument': {
-        'key': {
-            'environment': 'upd',
-            'application': 'appd',
-            'scope': 'scope',
-            'setting': 'setting'
-        },
-        'value': 'frisby test - update valid document',
-        'temporalization' : {
-            'cache_lifetime': '1200',
-            'eff_date': '1970-01-01T00:00:00.000Z',
-            'end_date': '9999-12-31T08:00:00.000Z'
-        }
-    }
-};
-
 frisby_module.create('update valid document')
     .post(settings.service.protocol + '://' +
         settings.service.hostname + ':' +
         settings.service.port + '/ccr/schedule/upd/appd/scope/setting',
-    valid_update_document,
+    {
+        'originalDocument': {
+            'key': {
+                'environment': 'upd',
+                'application': 'appd',
+                'scope': 'scope',
+                'setting': 'setting'
+            },
+            'value': 'prdeml001',
+            'temporalization': {
+                'cache_lifetime': 600,
+                'eff_date': '1970-01-01T00:00:00.000Z',
+                'end_date': '9999-12-31T08:00:00.000Z'
+            }
+        },
+        'updatedDocument': {
+            'key': {
+                'environment': 'upd',
+                'application': 'appd',
+                'scope': 'scope',
+                'setting': 'setting'
+            },
+            'value': 'frisby test - update valid document',
+            'temporalization' : {
+                'cache_lifetime': '1200',
+                'eff_date': '1970-01-01T00:00:00.000Z',
+                'end_date': '9999-12-31T08:00:00.000Z'
+            }
+        }
+    },
     {json : true})
     .expectStatus(200)
+    //.expectBodyContains('frisby test - update valid document')
+    .toss();
+
+frisby_module.create('update document missing key fields')
+    .post(settings.service.protocol + '://' +
+        settings.service.hostname + ':' +
+        settings.service.port + '/ccr/schedule/upd/appd/scope/setting',
+    {
+        'originalDocument': {
+            'key': {
+                'environment': 'upd',
+                'application': 'appd',
+                'scope': 'scope',
+                'setting': 'setting'
+            },
+            'value': 'prdeml001',
+            'temporalization': {
+                'cache_lifetime': 600,
+                'eff_date': '1970-01-01T00:00:00.000Z',
+                'end_date': '9999-12-31T08:00:00.000Z'
+            }
+        },
+        'updatedDocument': {
+            'key': {
+                'environment': 'upd',
+                'setting': 'setting'
+            },
+            'value': 'frisby test - update valid document',
+            'temporalization' : {
+                'cache_lifetime': '1200',
+                'eff_date': '1970-01-01T00:00:00.000Z',
+                'end_date': '9999-12-31T08:00:00.000Z'
+            }
+        }
+    },
+    {json : true})
+    .expectStatus(422)
+    //.expectBodyContains('frisby test - update valid document')
+    .toss();
+
+frisby_module.create('update document missing date field')
+    .post(settings.service.protocol + '://' +
+        settings.service.hostname + ':' +
+        settings.service.port + '/ccr/schedule/upd/appd/scope/setting',
+    {
+        'originalDocument': {
+            'key': {
+                'environment': 'upd',
+                'application': 'appd',
+                'scope': 'scope',
+                'setting': 'setting'
+            },
+            'value': 'prdeml001',
+            'temporalization': {
+                'cache_lifetime': 600,
+                'eff_date': '1970-01-01T00:00:00.000Z',
+                'end_date': '9999-12-31T08:00:00.000Z'
+            }
+        },
+        'updatedDocument': {
+            'key': {
+                'environment': 'upd',
+                'application': 'appd',
+                'scope': 'scope',
+                'setting': 'setting'
+            },
+            'value': 'frisby test - update valid document',
+            'temporalization' : {
+                'cache_lifetime': '1200',
+                'end_date': '9999-12-31T08:00:00.000Z'
+            }
+        }
+    },
+    {json : true})
+    .expectStatus(200)
+    //.expectBodyContains('frisby test - update valid document')
+    .toss();
+
+frisby_module.create('update document missing date field')
+    .post(settings.service.protocol + '://' +
+        settings.service.hostname + ':' +
+        settings.service.port + '/ccr/schedule/upd/appd/scope/setting',
+    {
+        'originalDocument': {
+            'key': {
+                'environment': 'upd',
+                'application': 'appd',
+                'scope': 'scope',
+                'setting': 'setting'
+            },
+            'value': 'prdeml001',
+            'temporalization': {
+                'cache_lifetime': 600,
+                'eff_date': '1970-01-01T00:00:00.000Z',
+                'end_date': '9999-12-31T08:00:00.000Z'
+            }
+        },
+        'updatedDocument': {
+            'key': {
+                'environment': 'upd',
+                'application': 'appd',
+                'scope': 'scope',
+                'setting': 'setting'
+            },
+            'value': 'frisby test - update valid document',
+            'temporalization' : {
+                'cache_lifetime': 'non-numeric',
+                'eff_date': '1970-01-01T00:00:00.000Z',
+                'end_date': '9999-12-31T08:00:00.000Z'
+            }
+        }
+    },
+    {json : true})
+    .expectStatus(422)
+    //.expectBodyContains('frisby test - update valid document')
+    .toss();
+
+frisby_module.create('update document invalid date field')
+    .post(settings.service.protocol + '://' +
+        settings.service.hostname + ':' +
+        settings.service.port + '/ccr/schedule/upd/appd/scope/setting',
+    {
+        'originalDocument': {
+            'key': {
+                'environment': 'upd',
+                'application': 'appd',
+                'scope': 'scope',
+                'setting': 'setting'
+            },
+            'value': 'prdeml001',
+            'temporalization': {
+                'cache_lifetime': 600,
+                'eff_date': '1970-01-01T00:00:00.000Z',
+                'end_date': '9999-12-31T08:00:00.000Z'
+            }
+        },
+        'updatedDocument': {
+            'key': {
+                'environment': 'upd',
+                'application': 'appd',
+                'scope': 'scope',
+                'setting': 'setting'
+            },
+            'value': 'frisby test - update valid document',
+            'temporalization' : {
+                'cache_lifetime': 600,
+                'eff_date': 'invalid date',
+                'end_date': '9999-12-31T08:00:00.000Z'
+            }
+        }
+    },
+    {json : true})
+    .expectStatus(422)
     //.expectBodyContains('frisby test - update valid document')
     .toss();
 
