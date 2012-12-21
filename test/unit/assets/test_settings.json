@@ -4,7 +4,7 @@
         "query_key_prefix" : "ccrq",
         "update_key_prefix" : "ccru"
     },
-    "data_store" : {
+    "datastore" : {
         "database_name" : "ccr_tests",
         "hostname" : "localhost",
         "port" : 27017,

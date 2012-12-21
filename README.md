@@ -121,3 +121,14 @@ This is the endpoint that should be used to manage the configuration settings.
 
 #### Examples
 
+
+
+       _
+      (_)
+   ___ _ _ __ ___   __ _ _   _  ___
+  / __| | '__/ _ \ / _` | | | |/ _ \
+ | (__| | | | (_) | (_| | |_| |  __/
+  \___|_|_|  \___/ \__, |\__,_|\___|
+                      | |
+                      |_|
+

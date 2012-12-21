@@ -18,9 +18,9 @@ exports.datastoreSettings = test_case(
 
             var ccr_settings = new ccr_settings_module.Settings(CONFIGURATION_TEST_FILENAME);
 
-            test.equal(ccr_settings.data_store.database_name, 'ccr_tests');
-            test.equal(ccr_settings.data_store.hostname, 'localhost');
-            test.equal(ccr_settings.data_store.port  , 27017);
+            test.equal(ccr_settings.datastore.database_name, 'ccr_tests');
+            test.equal(ccr_settings.datastore.hostname, 'localhost');
+            test.equal(ccr_settings.datastore.port  , 27017);
 
             test.done();
         },
@@ -39,9 +39,9 @@ exports.datastoreSettings = test_case(
 
             var ccr_settings = new ccr_settings_module.Settings(CONFIGURATION_TEST_FILENAME);
 
-            test.equal(ccr_settings.data_store.database_name, database_name_override);
-            test.equal(ccr_settings.data_store.hostname, hostname_override);
-            test.equal(ccr_settings.data_store.port  , port_override);
+            test.equal(ccr_settings.datastore.database_name, database_name_override);
+            test.equal(ccr_settings.datastore.hostname, hostname_override);
+            test.equal(ccr_settings.datastore.port  , port_override);
 
             test.done();
 

@@ -22,7 +22,7 @@ exports.retrieveActiveSettingTests = test_case(
 
             this.settings = new settings_module.Settings(TEST_SETTINGS_PATH);
             this.log_writer = new log_writer_module.LogWriter(this.settings);
-            this.data_store = data_store_factory.createDataStore(this.settings, this.log_writer);
+            this.datastore = data_store_factory.createDataStore(this.settings, this.log_writer);
 
             callback();
         },
@@ -35,7 +35,7 @@ exports.retrieveActiveSettingTests = test_case(
         noParametersReturnsListOfEnvironments : function(test) {
             var self = this;
 
-            this.data_store.retrieveActiveSetting(
+            this.datastore.retrieveActiveSetting(
                 null,
                 null,
                 null,
@@ -61,7 +61,7 @@ exports.retrieveActiveSettingTests = test_case(
 
             var self = this;
 
-            this.data_store.retrieveActiveSetting(
+            this.datastore.retrieveActiveSetting(
                 'environment',
                 null,
                 null,
@@ -92,7 +92,7 @@ exports.retrieveActiveSettingTests = test_case(
 
             var self = this;
 
-            this.data_store.retrieveActiveSetting(
+            this.datastore.retrieveActiveSetting(
                 'environment',
                 'application',
                 null,
@@ -120,7 +120,7 @@ exports.retrieveActiveSettingTests = test_case(
 
             var self = this;
 
-            this.data_store.retrieveActiveSetting(
+            this.datastore.retrieveActiveSetting(
                 'environment',
                 'application',
                 'scope',
@@ -148,7 +148,7 @@ exports.retrieveActiveSettingTests = test_case(
             test.expect(3);
 
 
-            this.data_store.retrieveActiveSetting(
+            this.datastore.retrieveActiveSetting(
                 'environment',
                 'application',
                 'scope',
@@ -174,7 +174,7 @@ exports.retrieveActiveSettingTests = test_case(
 
             var self = this;
 
-            this.data_store.retrieveActiveSetting(
+            this.datastore.retrieveActiveSetting(
                 'prod',
                 'application2',
                 'scope',
@@ -208,7 +208,7 @@ exports.retrieveSettingScheduleTests = test_case(
 
             this.settings = new settings_module.Settings(TEST_SETTINGS_PATH);
             this.log_writer = new log_writer_module.LogWriter(this.settings);
-            this.data_store = data_store_factory.createDataStore(this.settings, this.log_writer);
+            this.datastore = data_store_factory.createDataStore(this.settings, this.log_writer);
             callback();
         },
 
@@ -220,7 +220,7 @@ exports.retrieveSettingScheduleTests = test_case(
         noParametersReturnsListOfEnvironments : function(test) {
             var self = this;
 
-            this.data_store.retrieveSettingSchedule(
+            this.datastore.retrieveSettingSchedule(
                 null,
                 null,
                 null,
@@ -245,7 +245,7 @@ exports.retrieveSettingScheduleTests = test_case(
 
             var self = this;
 
-            this.data_store.retrieveSettingSchedule(
+            this.datastore.retrieveSettingSchedule(
                 'environment',
                 null,
                 null,
@@ -274,7 +274,7 @@ exports.retrieveSettingScheduleTests = test_case(
 
             var self = this;
 
-            this.data_store.retrieveSettingSchedule(
+            this.datastore.retrieveSettingSchedule(
                 'environment',
                 'application',
                 null,
@@ -300,7 +300,7 @@ exports.retrieveSettingScheduleTests = test_case(
 
             var self = this;
 
-            this.data_store.retrieveSettingSchedule(
+            this.datastore.retrieveSettingSchedule(
                 'environment',
                 'application',
                 'scope',
@@ -326,7 +326,7 @@ exports.retrieveSettingScheduleTests = test_case(
             test.expect(3);
 
 
-            this.data_store.retrieveSettingSchedule(
+            this.datastore.retrieveSettingSchedule(
                 'environment',
                 'application',
                 'scope',
@@ -348,7 +348,7 @@ exports.retrieveSettingScheduleTests = test_case(
 
         returnFullSchedule : function(test) {
 
-            this.data_store.retrieveSettingSchedule(
+            this.datastore.retrieveSettingSchedule(
                 'prod',
                 'application3',
                 'scope',
@@ -410,7 +410,7 @@ var update_document = {
             "end_date": "9999-12-31T08:00:00.000Z"
         }
     },
-    "updatedValues": {
+    "updatedDocument": {
         "value": "servername=thedatabase",
         "cache_lifetime": "600",
         "eff_date": new Date(1968, 04, 31),
@@ -479,10 +479,10 @@ exports.updateSettingsTests = test_case(
                     test.ok(err == null, err);
 
                     ctxt.log_writer.writeInfo('updateSettingsTests >> updateSetting >> result == ' + JSON.stringify(result));
-                    test.equal(result.value, update_document.updatedValues.value);
-                    test.equal(result.temporalization.cache_lifetime, update_document.updatedValues.cache_lifetime);
-                    test.ok((result.temporalization.eff_date + '') == (update_document.updatedValues.eff_date + ''));
-                    test.equal((result.temporalization.end_date + ''), (update_document.updatedValues.end_date + ''));
+                    test.equal(result.value, update_document.updatedDocument.value);
+                    test.equal(result.temporalization.cache_lifetime, update_document.updatedDocument.cache_lifetime);
+                    test.ok((result.temporalization.eff_date + '') == (update_document.updatedDocument.eff_date + ''));
+                    test.equal((result.temporalization.end_date + ''), (update_document.updatedDocument.end_date + ''));
 
                     test.done();
                 }

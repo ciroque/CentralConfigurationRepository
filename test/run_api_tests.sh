@@ -18,12 +18,12 @@ writeToConsole() {
 writeToConsole 'Setting environment variable overrides.'
 export data_store__database_name=ccr_tests
 export service__port=33131
-export data_store__database_name=ccr_tests
-export logging__log_level=7
+export datastore__database_name=ccr_tests
+export logging__log_level=8
 
 writeToConsole 'Starting CCR for tests.'
 pushd ../../lib/service
-forever start ./run_central_configuration_repository_service.js
+forever start -l ./ccr_tests.log --append ./run_central_configuration_repository_service.js
 forever list
 popd
 
@@ -38,6 +38,6 @@ forever stop 0
 
 popd
 
-export data_store__database_name=
+export datastore__database_name=
 export service__port=
 export data_store__database_name=
