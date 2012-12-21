@@ -123,7 +123,8 @@ This is the endpoint that should be used to manage the configuration settings.
 
 
 
-<pre>_
+<pre>
+       _
       (_)
    ___ _ _ __ ___   __ _ _   _  ___
   / __| | '__/ _ \ / _` | | | |/ _ \
