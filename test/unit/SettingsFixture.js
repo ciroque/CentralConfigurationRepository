@@ -31,9 +31,9 @@ exports.datastoreSettings = test_case(
             var hostname_override = 'env_datastore_host';
             var port_override = 951753;
 
-            process.env['data_store__database_name'] = database_name_override;
-            process.env['data_store__hostname'] = hostname_override;
-            process.env['data_store__port'] = port_override;
+            process.env['datastore__database_name'] = database_name_override;
+            process.env['datastore__hostname'] = hostname_override;
+            process.env['datastore__port'] = port_override;
 
             test.expect(3);
 
@@ -45,8 +45,8 @@ exports.datastoreSettings = test_case(
 
             test.done();
 
-            delete process.env['data_store__hostname'];
-            delete process.env['data_store__port'];
+            delete process.env['datastore__hostname'];
+            delete process.env['datastore__port'];
         }
     }
 );

@@ -17,7 +17,7 @@ exports.primaryTestGroup = test_case(
         getVersion : function(test) {
             test.expect(1);
 
-            var mock_data_store = {
+            var mock_datastore = {
                 retrieveActiveSetting : function(env, app, scope, setting, handler) {
                     handler(null);
                 }
@@ -35,7 +35,7 @@ exports.primaryTestGroup = test_case(
             };
 
             var cms_0_0_1 = new cms_0_0_1_module.ConfigurationManagementService_0_0_1(
-                mock_data_store,
+                mock_datastore,
                 mock_log_writer,
                 mock_access_stats_tracker,
                 settings
@@ -69,7 +69,7 @@ exports.primaryTestGroup = test_case(
                 }
             ];
 
-            var mock_data_store = {
+            var mock_datastore = {
                 retrieveSettingSchedule : function(env, app, scope, setting, handler) {
                     handler(null, result);
                 }
@@ -89,7 +89,7 @@ exports.primaryTestGroup = test_case(
             };
 
             var cms_0_0_1 = new cms_0_0_1_module.ConfigurationManagementService_0_0_1(
-                mock_data_store,
+                mock_datastore,
                 mock_log_writer,
                 mock_access_stats_tracker,
                 settings

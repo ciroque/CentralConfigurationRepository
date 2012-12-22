@@ -16,7 +16,7 @@ writeToConsole() {
 }
 
 writeToConsole 'Setting environment variable overrides.'
-export data_store__database_name=ccr_tests
+export datastore__database_name=ccr_tests
 export service__port=33131
 export datastore__database_name=ccr_tests
 export logging__log_level=8
@@ -40,4 +40,4 @@ popd
 
 export datastore__database_name=
 export service__port=
-export data_store__database_name=
+export datastore__database_name=

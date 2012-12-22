@@ -12,7 +12,7 @@ var test_case = nodeunit_module.testCase;
 var settings_module = require('n-app-conf');
 var log_writer_module = require('../../lib/service/LogWriter');
 
-var data_store_factory = require('../../lib/service/DataStoreFactory');
+var datastore_factory = require('../../lib/service/DataStoreFactory');
 
 exports.retrieveActiveSettingTests = test_case(
     {
@@ -22,7 +22,7 @@ exports.retrieveActiveSettingTests = test_case(
 
             this.settings = new settings_module.Settings(TEST_SETTINGS_PATH);
             this.log_writer = new log_writer_module.LogWriter(this.settings);
-            this.datastore = data_store_factory.createDataStore(this.settings, this.log_writer);
+            this.datastore = datastore_factory.createDataStore(this.settings, this.log_writer);
 
             callback();
         },
@@ -43,7 +43,7 @@ exports.retrieveActiveSettingTests = test_case(
                 function(err, settings) {
                     test.expect(2 + settings.length);
                     test.ok(err == null, err);
-                    test.equal(settings.length, 3);
+                    test.equal(settings.length, 4);
 
                     self.log_writer.writeDebug(JSON.stringify(settings));
 
@@ -208,7 +208,7 @@ exports.retrieveSettingScheduleTests = test_case(
 
             this.settings = new settings_module.Settings(TEST_SETTINGS_PATH);
             this.log_writer = new log_writer_module.LogWriter(this.settings);
-            this.datastore = data_store_factory.createDataStore(this.settings, this.log_writer);
+            this.datastore = datastore_factory.createDataStore(this.settings, this.log_writer);
             callback();
         },
 
@@ -228,7 +228,7 @@ exports.retrieveSettingScheduleTests = test_case(
                 function(err, settings) {
                     test.expect(2 + settings.length);
                     test.ok(err == null, err);
-                    test.equal(settings.length, 3);
+                    test.equal(settings.length, 4);
 
                     self.log_writer.writeDebug(JSON.stringify(settings));
 
@@ -411,10 +411,18 @@ var update_document = {
         }
     },
     "updatedDocument": {
+        "key": {
+            environment : "update_tests_env",
+            application : "update_tests_app",
+            scope : "update_tests_scope",
+            setting : "update_tests_setting"
+        },
         "value": "servername=thedatabase",
-        "cache_lifetime": "600",
-        "eff_date": new Date(1968, 04, 31),
-        "end_date": new Date(2012, 04, 31)
+        "temporalization": {
+            "cache_lifetime": "600",
+            "eff_date": new Date(1968, 04, 31),
+            "end_date": new Date(2012, 04, 31)
+        }
     }
 };
 
@@ -429,7 +437,7 @@ exports.updateSettingsTests = test_case(
 
             this.settings = new settings_module.Settings(TEST_SETTINGS_PATH);
             this.log_writer = new log_writer_module.LogWriter(this.settings);
-            this.datastore = data_store_factory.createDataStore(this.settings, this.log_writer);
+            this.datastore = datastore_factory.createDataStore(this.settings, this.log_writer);
 
             var ctxt = this;
 
@@ -480,9 +488,9 @@ exports.updateSettingsTests = test_case(
 
                     ctxt.log_writer.writeInfo('updateSettingsTests >> updateSetting >> result == ' + JSON.stringify(result));
                     test.equal(result.value, update_document.updatedDocument.value);
-                    test.equal(result.temporalization.cache_lifetime, update_document.updatedDocument.cache_lifetime);
-                    test.ok((result.temporalization.eff_date + '') == (update_document.updatedDocument.eff_date + ''));
-                    test.equal((result.temporalization.end_date + ''), (update_document.updatedDocument.end_date + ''));
+                    test.equal(result.temporalization.cache_lifetime, update_document.updatedDocument.temporalization.cache_lifetime);
+                    test.ok((result.temporalization.eff_date + '') == (update_document.updatedDocument.temporalization.eff_date + ''));
+                    test.equal((result.temporalization.end_date + ''), (update_document.updatedDocument.temporalization.end_date + ''));
 
                     test.done();
                 }
