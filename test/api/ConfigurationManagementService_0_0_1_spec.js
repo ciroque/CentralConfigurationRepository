@@ -119,7 +119,7 @@ frisby_module.create('update valid document')
     },
     {json : true})
     .expectStatus(200)
-    //.expectBodyContains('frisby test - update valid document')
+    .expectJSON( { value : 'frisby test - update valid document' })
     .toss();
 
 frisby_module.create('update document missing key fields')
@@ -156,7 +156,7 @@ frisby_module.create('update document missing key fields')
     },
     {json : true})
     .expectStatus(422)
-    //.expectBodyContains('frisby test - update valid document')
+    .expectJSON( 'issues', [{ name : 'application', problem : 'value for key field is required' }])
     .toss();
 
 frisby_module.create('update document missing date field')
@@ -194,7 +194,7 @@ frisby_module.create('update document missing date field')
     },
     {json : true})
     .expectStatus(200)
-    //.expectBodyContains('frisby test - update valid document')
+    .expectJSON({ value : 'frisby test - update valid document' })
     .toss();
 
 frisby_module.create('update document missing date field')
@@ -233,7 +233,7 @@ frisby_module.create('update document missing date field')
     },
     {json : true})
     .expectStatus(422)
-    //.expectBodyContains('frisby test - update valid document')
+    .expectJSON( 'issues', [{ name : 'cache_lifetime', problem : 'cache lifetime must be numeric' }])
     .toss();
 
 frisby_module.create('update document invalid date field')
@@ -272,7 +272,7 @@ frisby_module.create('update document invalid date field')
     },
     {json : true})
     .expectStatus(422)
-    //.expectBodyContains('frisby test - update valid document')
+    .expectJSON( 'issues', [{ name : 'eff_date', problem : '"invalid date" is an invalid date' }])
     .toss();
 
 
