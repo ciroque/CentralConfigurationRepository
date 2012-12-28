@@ -108,3 +108,15 @@ select {
     display : inline-block;
     text-align: left;
 }
+
+.error-result {
+    padding-left: 30px;
+}
+
+.success-result {
+    padding-left: 30px;
+}
+
+.warning-result {
+    padding-left: 30px;
+}
