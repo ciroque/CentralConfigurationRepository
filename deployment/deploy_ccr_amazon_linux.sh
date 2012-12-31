@@ -35,7 +35,7 @@ run() {
     fi
     mkdir -p $TMP_BUILD_PATH
 
-    pushd $TMP_BUILD_PATH > /dev/nul
+    cd $TMP_BUILD_PATH > /dev/nul
 
     echo
     echo == ===== ===== ===== ===== Downloading sources from github
@@ -64,7 +64,7 @@ run() {
     echo
     echo == ===== ===== ===== ===== Installing Node module dependencies
     pushd $SVC_INSTALL_PATH > /dev/nul
-    npm install -d -q
+#    npm install -d -q
     popd > /dev/nul
 
     ### Web site installation
@@ -102,6 +102,7 @@ run() {
 
     pushd $DIR_NAME/deployment
     cp ccr_nginx.conf $NGINX_CONF_FILENAME
+    popd
 
 
     ### install runnables
@@ -109,15 +110,15 @@ run() {
     echo
     echo
     echo == ===== ===== ===== ===== Installing forever
-    npm install -g forever -q
+#    npm install -g forever -q
 
     echo
     echo == ===== ===== ===== ===== Copying init.d script into place and configuring for automatic startup
-    pushd ./$DIR_NAME/deployment/init.d
+    pushd ./$DIR_NAME/deployment/init.d > /dev/nul
     cp $STARTUP_SCRIPT_NAME /etc/init.d
     chmod +x /etc/init.d/$STARTUP_SCRIPT_NAME
     chkconfig --add /etc/init.d/$STARTUP_SCRIPT_NAME
-    popd
+    popd > /dev/nul
 
 #    echo
 #    echo == ===== ===== ===== ===== Importing the initial configuration settings into the datastore
@@ -125,9 +126,9 @@ run() {
 
     echo
     echo == ===== ===== ===== ===== Starting all services
-    pushd $SVC_INSTALL_PATH
+    pushd $SVC_INSTALL_PATH > /dev/nul
     /etc/init.d/$STARTUP_SCRIPT_NAME start
-    popd
+    popd > /dev/nul
 
     echo
     echo == ===== ===== ===== ===== Running smoke tests...
