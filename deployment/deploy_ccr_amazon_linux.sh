@@ -56,7 +56,7 @@ run() {
     pushd ./$DIR_NAME > /dev/nul
     pushd ./lib/service > /dev/nul
     cp -R . $SVC_INSTALL_PATH
-    popd
+    popd > /dev/nul
     cp ./package.json $SVC_INSTALL_PATH
     cp ./README.md $SVC_INSTALL_PATH
     popd > /dev/nul
@@ -84,22 +84,24 @@ run() {
     popd > /dev/nul
 
     echo
-    echo == ===== ===== ===== ===== Writing nginx configuration files
+    echo == ===== ===== ===== ===== Copying nginx configuration files into place
     if [ ! -d $NGINX_SITES_AVAILABLE_DIR ]
     then
-        md $NGINX_SITES_AVAILABLE_DIR
+        mkdir $NGINX_SITES_AVAILABLE_DIR
     fi
 
     if [ ! -d $NGINX_SITES_ENABLED_DIR ]
     then
-        md $NGINX_SITES_ENABLED_DIR
+        mkdir $NGINX_SITES_ENABLED_DIR
     fi
 
-    if[ -f $NGINX_CONF_FILENAME ]
+    if [ -f $NGINX_CONF_FILENAME ]
     then
         rm $NGINX_CONF_FILENAME
     fi
 
+    pushd $DIR_NAME/deployment
+    cp ccr_nginx.conf $NGINX_CONF_FILENAME
 
 
     ### install runnables
@@ -117,9 +119,9 @@ run() {
     chkconfig --add /etc/init.d/$STARTUP_SCRIPT_NAME
     popd
 
-    echo
-    echo == ===== ===== ===== ===== Importing the initial configuration settings into the datastore
-    mongoimport -d ccr -c settings --drop --file $SVC_INSTALL_PATH/seed_data/initial_settings.dat
+#    echo
+#    echo == ===== ===== ===== ===== Importing the initial configuration settings into the datastore
+#    mongoimport -d ccr -c settings --drop --file $SVC_INSTALL_PATH/seed_data/initial_settings.dat
 
     echo
     echo == ===== ===== ===== ===== Starting all services
