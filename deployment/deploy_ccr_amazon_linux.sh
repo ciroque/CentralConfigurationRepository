@@ -49,7 +49,9 @@ run() {
     echo
     echo == ===== ===== ===== ===== Copy service code into place
     pushd ./$DIR_NAME > /dev/nul
-    cp -R ./lib/service $SVC_INSTALL_PATH
+    pushd ./lib/service > /dev/nul
+    cp -R . $SVC_INSTALL_PATH
+    popd
     cp ./package.json $SVC_INSTALL_PATH
     cp ./README.md $SVC_INSTALL_PATH
     popd > /dev/nul
@@ -74,7 +76,7 @@ run() {
     echo == ===== ===== ===== ===== Copy web site code into place
     pushd ./$DIR_NAME/lib/web > /dev/nul
     cp -R . $WEB_INSTALL_PATH
-    popd
+    popd > /dev/nul
 
     echo
     echo == ===== ===== ===== ===== Writing configuration files
@@ -89,8 +91,11 @@ run() {
 
     echo
     echo == ===== ===== ===== ===== Copying init.d script into place and configuring for automatic startup
-    cp $SVC_INSTALL_PATH/source/etc_init.d/$STARTUP_SCRIPT_NAME /etc/init.d
-#    chkconfig --add /etc/init.d/$STARTUP_SCRIPT_NAME
+    pushd ./$DIR_NAME/deployment/init.d
+    cp $STARTUP_SCRIPT_NAME /etc/init.d
+    chmod +x /etc/init.d/$STARTUP_SCRIPT_NAME
+    chkconfig --add /etc/init.d/$STARTUP_SCRIPT_NAME
+    popd
 
     echo
     echo == ===== ===== ===== ===== Importing the initial configuration settings into the datastore
@@ -98,9 +103,9 @@ run() {
 
     echo
     echo == ===== ===== ===== ===== Starting all services
-    cd $SVC_INSTALL_PATH/
-    ./run_central_configuration_repository_service.js
-#    /etc/init.d/$STARTUP_SCRIPT_NAME start
+    pushd $SVC_INSTALL_PATH
+    /etc/init.d/$STARTUP_SCRIPT_NAME start
+    popd
 
     echo
     echo == ===== ===== ===== ===== Running smoke tests...
