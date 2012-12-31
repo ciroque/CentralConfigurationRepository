@@ -11,6 +11,11 @@ INSTALL_PATH=/opt/ciroque/$DIR_NAME
 SVC_INSTALL_PATH=$INSTALL_PATH/service
 WEB_INSTALL_PATH=$INSTALL_PATH/web
 
+NGINX_DIRECTORY=/etc/nginx/
+NGINX_SITES_AVAILABLE_DIR=$NGINX_DIRECTORY/sites-available
+NGINX_SITES_ENABLED_DIR=$NGINX_DIRECTORY/sites-enabled
+NGINX_CONF_FILENAME=$NGINX_SITES_AVAILABLE_DIR/$DIR_NAME.conf
+
 TMP_BUILD_PATH=/tmp/ccrbuilds
 STARTUP_SCRIPT_NAME=ccr_svc_control
 
@@ -79,8 +84,23 @@ run() {
     popd > /dev/nul
 
     echo
-    echo == ===== ===== ===== ===== Writing configuration files
-    echo TODO
+    echo == ===== ===== ===== ===== Writing nginx configuration files
+    if [ ! -d $NGINX_SITES_AVAILABLE_DIR ]
+    then
+        md $NGINX_SITES_AVAILABLE_DIR
+    fi
+
+    if [ ! -d $NGINX_SITES_ENABLED_DIR ]
+    then
+        md $NGINX_SITES_ENABLED_DIR
+    fi
+
+    if[ -f $NGINX_CONF_FILENAME ]
+    then
+        rm $NGINX_CONF_FILENAME
+    fi
+
+
 
     ### install runnables
 
