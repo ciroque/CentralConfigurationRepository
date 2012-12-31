@@ -89,7 +89,7 @@ run() {
 
     echo
     echo == ===== ===== ===== ===== Copying init.d script into place and configuring for automatic startup
-#    cp $SVC_INSTALL_PATH/source/etc_init.d/$STARTUP_SCRIPT_NAME /etc/init.d
+    cp $SVC_INSTALL_PATH/source/etc_init.d/$STARTUP_SCRIPT_NAME /etc/init.d
 #    chkconfig --add /etc/init.d/$STARTUP_SCRIPT_NAME
 
     echo
