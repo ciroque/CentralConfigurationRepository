@@ -1,0 +1,18 @@
+#!/bin/sh -e
+# chkconfig: 345 10 10
+# Description: Central Configuration Repository
+
+set -e
+
+PATH=/usr/local/node:/bin:/usr/bin:/sbin:/usr/sbin
+DAEMON=/opt/ciroque/CentralConfigurationRepository/service/run_central_configuration_repository_service.js
+
+case "$1" in
+    start) forever start $DAEMON ;;
+    stop) forever stop $DAEMON ;;
+    force-reload|restart) forever restart $DAEMON ;;
+    *) echo "Usage: /etc/init.d/ciroque_ccr {start|stop|force-reload|restart}"
+    exit 1 ;;
+
+esac
+exit 0

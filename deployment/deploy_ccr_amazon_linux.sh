@@ -6,10 +6,12 @@
 ##  Deploys CCR on an AWS instance running Amazon Linux
 ### ****************************************************************************
 
-INSTALL_PATH=/opt/ciroque
-INSTALL_DIRECTORY=CentralConfigurationRepository
+DIR_NAME=CentralConfigurationRepository
+INSTALL_PATH=/opt/ciroque/$DIR_NAME
+SVC_INSTALL_PATH=$INSTALL_PATH/service
+WEB_INSTALL_PATH=$INSTALL_PATH/web
+
 TMP_BUILD_PATH=/tmp/ccrbuilds
-MONGODB_ROOT_PATH=/srv/mongodb
 STARTUP_SCRIPT_NAME=ccr_svc_control
 
 VERBOSE=
@@ -24,66 +26,85 @@ run() {
     echo == ===== ===== ===== ===== Ensuring temporary build path exists
     if [ -d $TMP_BUILD_PATH ]
     then
-        rm -R $TMP_BUILD_PATH
+        rm -R $TMP_BUILD_PATH > /dev/nul
     fi
     mkdir -p $TMP_BUILD_PATH
 
-    pushd $TMP_BUILD_PATH
+    pushd $TMP_BUILD_PATH > /dev/nul
 
-    echo
     echo
     echo == ===== ===== ===== ===== Downloading sources from github
     git clone "https://github.com/ciroque/CentralConfigurationRepository.git"
 
-    echo
-    echo
-    echo == ===== ===== ===== ===== Ensuring the deployment directory exists
-    if [ -d $INSTALL_PATH/$INSTALL_DIRECTORY ]
-    then
-        rm -R $INSTALL_PATH/$INSTALL_DIRECTORY
-    fi
-    mkdir -p $INSTALL_PATH
+    ### service installation
 
     echo
+    echo == ===== ===== ===== ===== Ensuring the service deployment directory exists
+    if [ -d $SVC_INSTALL_PATH ]
+    then
+        rm -R $SVC_INSTALL_PATH
+    fi
+    mkdir -p $SVC_INSTALL_PATH
+
     echo
     echo == ===== ===== ===== ===== Copy service code into place
+    pushd ./$DIR_NAME > /dev/nul
+    cp -R ./lib/service $SVC_INSTALL_PATH
+    cp ./package.json $SVC_INSTALL_PATH
+    cp ./README.md $SVC_INSTALL_PATH
+    popd > /dev/nul
 
-    echo
-    echo
-    echo == ===== ===== ===== ===== Copy management web site code into place
-
-    echo
     echo
     echo == ===== ===== ===== ===== Installing Node module dependencies
-    npm install -d
-    popd
+    pushd $SVC_INSTALL_PATH > /dev/nul
+    npm install -d -q
+    popd > /dev/nul
+
+    ### Web site installation
 
     echo
+    echo == ===== ===== ===== ===== Ensuring the website deployment directory exists
+    if [ -d $WEB_INSTALL_PATH ]
+    then
+        rm -R $WEB_INSTALL_PATH
+    fi
+    mkdir -p $WEB_INSTALL_PATH
+
     echo
-    echo == ===== ===== ===== ===== Installing forever
-    npm install -g forever
+    echo == ===== ===== ===== ===== Copy web site code into place
+    pushd ./$DIR_NAME/lib/web > /dev/nul
+    cp -R . $WEB_INSTALL_PATH
+    popd
 
     echo
     echo == ===== ===== ===== ===== Writing configuration files
     echo TODO
 
+    ### install runnables
+
+    echo
+    echo
+    echo == ===== ===== ===== ===== Installing forever
+    npm install -g forever -q
+
     echo
     echo == ===== ===== ===== ===== Copying init.d script into place and configuring for automatic startup
-#    cp $INSTALL_PATH/$INSTALL_DIRECTORY/source/etc_init.d/$STARTUP_SCRIPT_NAME /etc/init.d
+#    cp $SVC_INSTALL_PATH/source/etc_init.d/$STARTUP_SCRIPT_NAME /etc/init.d
 #    chkconfig --add /etc/init.d/$STARTUP_SCRIPT_NAME
 
     echo
     echo == ===== ===== ===== ===== Importing the initial configuration settings into the datastore
-    mongoimport -d ccr -c settings --drop --file $INSTALL_PATH/$INSTALL_DIRECTORY/seed_data/initial_settings.dat
+    mongoimport -d ccr -c settings --drop --file $SVC_INSTALL_PATH/seed_data/initial_settings.dat
 
     echo
     echo == ===== ===== ===== ===== Starting all services
-#    cd $INSTALL_PATH/$INSTALL_DIRECTORY/source
+    cd $SVC_INSTALL_PATH/
+    ./run_central_configuration_repository_service.js
 #    /etc/init.d/$STARTUP_SCRIPT_NAME start
 
     echo
     echo == ===== ===== ===== ===== Running smoke tests...
-#    cd $INSTALL_PATH/$INSTALL_DIRECTORY/test
+#    cd $SVC_INSTALL_PATH/test
 #    npm install frisby
 #    ./run_api_tests.sh
 
