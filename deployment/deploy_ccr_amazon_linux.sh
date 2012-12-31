@@ -21,51 +21,6 @@ run() {
 
     echo
     echo
-    echo == ===== ===== ===== ===== Ensuring prerequisites are installed
-    $PACKAGE_MANAGER install -y gcc-c++ make
-    $PACKAGE_MANAGER install -y openssl-devel
-    $PACKAGE_MANAGER install -y git
-
-    echo
-    echo
-    echo == ===== ===== ===== ===== Ensuring nginx and memcached are installed
-    $PACKAGE_MANAGER install -y nginx
-    $PACKAGE_MANAGER install -y memcached
-
-    echo
-    echo
-    echo == ===== ===== ===== ===== starting memcached
-    service memcached start
-
-    echo
-    echo
-    echo == ===== ===== ===== ===== Installing mongodb
-    echo "
-[10gen]
-name=10gen Repository
-baseurl=http://downloads-distro.mongodb.org/repo/redhat/os/x86_64
-gpgcheck=0" | tee -a /etc/yum.repos.d/10gen.repo
-
-    $PACKAGE_MANAGER -y install mongo-10gen mongo-10gen-server
-    $PACKAGE_MANAGER -y install sysstat
-
-    #service mongod stop
-
-    mkdir -p $MONGODB_ROOT_PATH/data
-    mkdir -p $MONGODB_ROOT_PATH/log
-    mkdir -p $MONGODB_ROOT_PATH/journal
-
-    chown mongod:mongod $MONGODB_ROOT_PATH/data
-    chown mongod:mongod $MONGODB_ROOT_PATH/log
-    chown mongod:mongod $MONGODB_ROOT_PATH/journal
-
-    echo
-    echo
-    echo == ===== ===== ===== ===== starting mongodb
-    #service mongod start
-
-    echo
-    echo
     echo == ===== ===== ===== ===== Ensuring temporary build path exists
     if [ -d $TMP_BUILD_PATH ]
     then
@@ -73,56 +28,39 @@ gpgcheck=0" | tee -a /etc/yum.repos.d/10gen.repo
     fi
     mkdir -p $TMP_BUILD_PATH
 
-    echo
-    echo
-    echo == ===== ===== ===== ===== Ensuring the deployment directory exists
-    mkdir -p $INSTALL_PATH
-
-    echo
-    echo
-    echo == ===== ===== ===== ===== Ensuring Node.js is installed
     pushd $TMP_BUILD_PATH
-    mkdir node
-    pushd node
-    wget http://nodejs.org/dist/node-latest.tar.gz
-    tar --strip-components=1 -zxf node-latest.tar.gz
-    ./configure --prefix=/usr
-    make
-    make install
-    popd
-
-    echo
-    echo
-    echo == ===== ===== ===== ===== Ensuring Node Package Manager is installed
-    git clone http://github.com/isaacs/npm.git
-    pushd npm
-    make install
-    popd
-
-    popd
-
-    pushd $INSTALL_PATH > /dev/null
 
     echo
     echo
     echo == ===== ===== ===== ===== Downloading sources from github
-    if [ -d $INSTALL_PATH/$INSTALL_DIRECTORY ]
-    then
-        rm -R $INSTALL_PATH/$INSTALL_DIRECTORY
-    fi
-
     git clone "https://github.com/ciroque/CentralConfigurationRepository.git"
 
     echo
     echo
+    echo == ===== ===== ===== ===== Ensuring the deployment directory exists
+    if [ -d $INSTALL_PATH/$INSTALL_DIRECTORY ]
+    then
+        rm -R $INSTALL_PATH/$INSTALL_DIRECTORY
+    fi
+    mkdir -p $INSTALL_PATH
+
+    echo
+    echo
+    echo == ===== ===== ===== ===== Copy service code into place
+
+    echo
+    echo
+    echo == ===== ===== ===== ===== Copy management web site code into place
+
+    echo
+    echo
     echo == ===== ===== ===== ===== Installing Node module dependencies
-#    pushd ./$INSTALL_DIRECTORY/lib
     npm install -d
     popd
 
     echo
     echo
-s    echo == ===== ===== ===== ===== Installing forever
+    echo == ===== ===== ===== ===== Installing forever
     npm install -g forever
 
     echo
@@ -149,6 +87,8 @@ s    echo == ===== ===== ===== ===== Installing forever
 #    npm install frisby
 #    ./run_api_tests.sh
 
+
+#    rm -R $TMP_BUILD_PATH
 }
 
 run
