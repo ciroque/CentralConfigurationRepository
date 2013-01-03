@@ -5,10 +5,13 @@
 set -e
 
 PATH=/usr/local/node:/bin:/usr/bin:/sbin:/usr/sbin
-DAEMON=/opt/ciroque/CentralConfigurationRepository/service/run_central_configuration_repository_service.js
+DIRECTORY=/opt/ciroque/CentralConfigurationRepository/service
+DAEMON=$DIRECTORY/run_central_configuration_repository_service.js
+
+
 
 case "$1" in
-    start) forever start $DAEMON ;;
+    start) forever -l /var/log/forever/ccr.log -o /var/log/ccr/ccr.log -e /var/log/ccr/ccr.err -p $DIRECTORY start $DAEMON ;;
     stop) forever stop $DAEMON ;;
     force-reload|restart) forever restart $DAEMON ;;
     *) echo "Usage: /etc/init.d/ciroque_ccr {start|stop|force-reload|restart}"

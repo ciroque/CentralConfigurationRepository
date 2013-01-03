@@ -64,7 +64,7 @@ run() {
     echo
     echo == ===== ===== ===== ===== Installing Node module dependencies
     pushd $SVC_INSTALL_PATH > /dev/nul
-#    npm install -d -q
+    npm install -d -q
     popd > /dev/nul
 
     ### Web site installation
@@ -100,21 +100,37 @@ run() {
         rm $NGINX_CONF_FILENAME
     fi
 
-    pushd $DIR_NAME/deployment
+    pushd $DIR_NAME/deployment > /dev/nul
     cp ccr_nginx.conf $NGINX_CONF_FILENAME
-    popd
+    popd > /dev/nul
 
 
     ### install runnables
 
     echo
+    echo == ===== ===== ===== ===== Ensuring log directories exist
+    if [ ! -d /var/log/forever ]
+    then
+        mkdir /var/log/forever
+    fi
+
+    if [ ! -d /var/log/ccr ]
+    then
+        mkdir /var/log/ccr
+    fi
+
     echo
     echo == ===== ===== ===== ===== Installing forever
-#    npm install -g forever -q
+    npm install -g forever -q
 
     echo
     echo == ===== ===== ===== ===== Copying init.d script into place and configuring for automatic startup
     pushd ./$DIR_NAME/deployment/init.d > /dev/nul
+    if [ -f /etc/init.d/$STARTUP_SCRIPT_NAME ]
+    then
+        rm /etc/init.d/$STARTUP_SCRIPT_NAME
+    fi
+
     cp $STARTUP_SCRIPT_NAME /etc/init.d
     chmod +x /etc/init.d/$STARTUP_SCRIPT_NAME
     chkconfig --add /etc/init.d/$STARTUP_SCRIPT_NAME
