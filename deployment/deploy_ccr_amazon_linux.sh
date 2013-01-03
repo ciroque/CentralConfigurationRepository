@@ -148,9 +148,9 @@ run() {
 
     echo
     echo == ===== ===== ===== ===== Running smoke tests...
-#    cd $SVC_INSTALL_PATH/test
-#    npm install frisby
-#    ./run_api_tests.sh
+    pushd $TMP_BUILD_PATH/CentralConfigurationRepository/test
+    npm install -y frisby
+    ./run_api_tests.sh
 
 
 #    rm -R $TMP_BUILD_PATH
