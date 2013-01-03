@@ -11,7 +11,7 @@ DAEMON=run_central_configuration_repository_service.js
 pushd $DIRECTORY
 
 case "$1" in
-    start) forever --sourceDir $DIRECTORY -l /var/log/forever/ccr.log -o /var/log/ccr/ccr.log -e /var/log/ccr/ccr.err -p $DIRECTORY start $DAEMON ;;
+    start) forever --sourceDir $DIRECTORY -l -a /var/log/forever/ccr.log -o /var/log/ccr/ccr.log -e /var/log/ccr/ccr.err -p $DIRECTORY start $DAEMON ;;
     stop) forever stop $DAEMON ;;
     force-reload|restart) forever restart $DAEMON ;;
     *) echo "Usage: /etc/init.d/ciroque_ccr {start|stop|force-reload|restart}"
