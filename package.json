@@ -20,6 +20,7 @@
     "dependencies": {
         "async" : "0.1.22"
         , "caterpillar": ">=1.1.3"
+        , "caterpillar-human": ">=1.1.3"
         , "frisby" : "0.6.2"
         , "jasmine-node" : "1.0.26"
         , "memcached" : "0.1.5"
