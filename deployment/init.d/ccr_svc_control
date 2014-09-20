@@ -8,7 +8,7 @@ PATH=/usr/local/node:/bin:/usr/bin:/sbin:/usr/sbin
 DIRECTORY=/opt/ciroque/CentralConfigurationRepository/service
 DAEMON=run_central_configuration_repository_service.js
 
-pushd $DIRECTORY
+cd $DIRECTORY
 
 case "$1" in
     start) forever --sourceDir $DIRECTORY -l -a /var/log/forever/ccr.log -o /var/log/ccr/ccr.log -e /var/log/ccr/ccr.err -p $DIRECTORY start $DAEMON ;;
@@ -19,6 +19,6 @@ case "$1" in
 
 esac
 
-popd
+cd -
 
 exit 0
